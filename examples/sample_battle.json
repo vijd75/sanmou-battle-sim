@@ -1,0 +1,66 @@
+{
+  "team_a": {
+    "name": "桃园队",
+    "generals": [
+      {
+        "name": "刘备",
+        "troops": 6200,
+        "force": 115,
+        "intellect": 156,
+        "command": 148,
+        "initiative": 128,
+        "skills": ["仁德载世", "避其锐气"]
+      },
+      {
+        "name": "关羽",
+        "troops": 6500,
+        "force": 174,
+        "intellect": 105,
+        "command": 162,
+        "initiative": 145,
+        "skills": ["威震华夏", "横扫千军", "乘胜追击"]
+      },
+      {
+        "name": "张飞",
+        "troops": 6600,
+        "force": 168,
+        "intellect": 82,
+        "command": 151,
+        "initiative": 132,
+        "skills": ["燕人咆哮", "破阵猛攻"]
+      }
+    ]
+  },
+  "team_b": {
+    "name": "魏武队",
+    "generals": [
+      {
+        "name": "曹操",
+        "troops": 6400,
+        "force": 122,
+        "intellect": 178,
+        "command": 171,
+        "initiative": 138,
+        "skills": ["乱世奸雄", "运筹帷幄"]
+      },
+      {
+        "name": "典韦",
+        "troops": 6800,
+        "force": 181,
+        "intellect": 74,
+        "command": 169,
+        "initiative": 118,
+        "skills": ["古之恶来", "披坚执锐"]
+      },
+      {
+        "name": "许褚",
+        "troops": 6500,
+        "force": 176,
+        "intellect": 68,
+        "command": 150,
+        "initiative": 142,
+        "skills": ["虎痴", "破阵猛攻", "乘胜追击"]
+      }
+    ]
+  }
+}

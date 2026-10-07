@@ -1,0 +1,9 @@
+﻿event_index,damage_type,target,armor_pierce_pct,insight_pct,target_command,target_intellect,observed_damage,prior_k,prediction_prior_k,residual_prior_k,fitted_k,prediction_fitted_k,residual_fitted_k,fit_constraint
+740,兵刃,马腾,71.4,54.44,328.04,105.12,424,0.858227,376,-48,0.8823270251458109,386,-38,0<=k<=1; all other multipliers held at corrected audit assumptions
+762,谋略,马腾,89.55,72.59,328.04,105.12,530,0.436802,324,-206,0.9999999848791109,332,-198,0<=k<=1; all other multipliers held at corrected audit assumptions
+772,兵刃,钟会,89.55,72.59,304.31,265.6,790,0.858227,699,-91,0.8823270251458109,731,-59,0<=k<=1; all other multipliers held at corrected audit assumptions
+789,谋略,钟会,100.0,90.73,304.31,265.6,725,0.436802,395,-330,0.9999999848791109,421,-304,0<=k<=1; all other multipliers held at corrected audit assumptions
+800,兵刃,钟会,100.0,90.73,304.31,265.6,1056,0.858227,973,-83,0.8823270251458109,1035,-21,0<=k<=1; all other multipliers held at corrected audit assumptions
+815,谋略,钟会,100.0,90.73,304.31,265.6,754,0.436802,422,-332,0.9999999848791109,444,-310,0<=k<=1; all other multipliers held at corrected audit assumptions
+824,兵刃,马腾,100.0,90.73,328.04,105.12,833,0.858227,839,6,0.8823270251458109,895,62,0<=k<=1; all other multipliers held at corrected audit assumptions
+838,谋略,马腾,100.0,90.73,328.04,105.12,616,0.436802,368,-248,0.9999999848791109,374,-242,0<=k<=1; all other multipliers held at corrected audit assumptions

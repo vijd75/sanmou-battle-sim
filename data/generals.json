@@ -1,0 +1,3107 @@
+{
+  "metadata": {
+    "source": "user screenshots",
+    "current_level": 5,
+    "max_level": 50,
+    "free_attribute_points": {
+      "points_per_milestone": 10,
+      "milestone_levels": [
+        10,
+        20,
+        30,
+        40,
+        50
+      ],
+      "note": "User note: when level is a multiple of 10, the general receives 10 freely assignable attribute points."
+    },
+    "stat_formula": "stat_at_level = current_stat + growth * (target_level - current_level) + allocated_free_points"
+  },
+  "generals": [
+    {
+      "name": "刘备",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "治疗",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 80,
+          "growth": 1.43
+        },
+        "intellect": {
+          "current": 94,
+          "growth": 2.31
+        },
+        "command": {
+          "current": 109,
+          "growth": 2.12
+        },
+        "initiative": {
+          "current": 53,
+          "growth": 1.72
+        }
+      },
+      "innate_skill": "携民渡江",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "曹操",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "防御",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 76,
+          "growth": 1.3
+        },
+        "intellect": {
+          "current": 102,
+          "growth": 2.3
+        },
+        "command": {
+          "current": 107,
+          "growth": 2.52
+        },
+        "initiative": {
+          "current": 53,
+          "growth": 1.79
+        }
+      },
+      "innate_skill": "乱世奸雄",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "孙权",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "文武",
+        "辅助",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 90,
+          "growth": 1.91
+        },
+        "intellect": {
+          "current": 96,
+          "growth": 2.08
+        },
+        "command": {
+          "current": 101,
+          "growth": 2.09
+        },
+        "initiative": {
+          "current": 74,
+          "growth": 2.33
+        }
+      },
+      "innate_skill": "虎踞江东",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "SP诸葛亮",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 53,
+          "growth": 0.56
+        },
+        "intellect": {
+          "current": 125,
+          "growth": 3.0
+        },
+        "command": {
+          "current": 104,
+          "growth": 2.24
+        },
+        "initiative": {
+          "current": 61,
+          "growth": 1.71
+        }
+      },
+      "innate_skill": "星罗棋布",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "诸葛亮",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 50,
+          "growth": 0.52
+        },
+        "intellect": {
+          "current": 125,
+          "growth": 3.0
+        },
+        "command": {
+          "current": 111,
+          "growth": 2.3
+        },
+        "initiative": {
+          "current": 57,
+          "growth": 1.65
+        }
+      },
+      "innate_skill": "草船借箭",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "左慈",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 14,
+          "growth": 0.34
+        },
+        "intellect": {
+          "current": 112,
+          "growth": 2.65
+        },
+        "command": {
+          "current": 88,
+          "growth": 2.13
+        },
+        "initiative": {
+          "current": 63,
+          "growth": 1.77
+        }
+      },
+      "innate_skill": "云行雨施",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "贾诩",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 59,
+          "growth": 0.21
+        },
+        "intellect": {
+          "current": 119,
+          "growth": 2.75
+        },
+        "command": {
+          "current": 89,
+          "growth": 1.73
+        },
+        "initiative": {
+          "current": 66,
+          "growth": 2.06
+        }
+      },
+      "innate_skill": "诡道玄机",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "张辽",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 115,
+          "growth": 2.55
+        },
+        "intellect": {
+          "current": 92,
+          "growth": 1.49
+        },
+        "command": {
+          "current": 103,
+          "growth": 1.95
+        },
+        "initiative": {
+          "current": 87,
+          "growth": 2.61
+        }
+      },
+      "innate_skill": "风袭逍遥",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "姜维",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "文武",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 101,
+          "growth": 2.39
+        },
+        "intellect": {
+          "current": 111,
+          "growth": 2.52
+        },
+        "command": {
+          "current": 91,
+          "growth": 2.01
+        },
+        "initiative": {
+          "current": 76,
+          "growth": 1.99
+        }
+      },
+      "innate_skill": "九伐中原",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "陆逊",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 68,
+          "growth": 0.44
+        },
+        "intellect": {
+          "current": 117,
+          "growth": 2.74
+        },
+        "command": {
+          "current": 103,
+          "growth": 1.96
+        },
+        "initiative": {
+          "current": 49,
+          "growth": 1.88
+        }
+      },
+      "innate_skill": "火烧连营",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "司马懿",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 69,
+          "growth": 0.34
+        },
+        "intellect": {
+          "current": 119,
+          "growth": 2.8
+        },
+        "command": {
+          "current": 114,
+          "growth": 2.11
+        },
+        "initiative": {
+          "current": 47,
+          "growth": 1.54
+        }
+      },
+      "innate_skill": "鹰视狼顾",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "皇甫嵩",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "防御",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 89,
+          "growth": 1.83
+        },
+        "intellect": {
+          "current": 85,
+          "growth": 1.96
+        },
+        "command": {
+          "current": 111,
+          "growth": 2.36
+        },
+        "initiative": {
+          "current": 80,
+          "growth": 1.93
+        }
+      },
+      "innate_skill": "兵动若神",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "SP周瑜",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "谋略",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 77,
+          "growth": 0.95
+        },
+        "intellect": {
+          "current": 118,
+          "growth": 2.79
+        },
+        "command": {
+          "current": 105,
+          "growth": 2.32
+        },
+        "initiative": {
+          "current": 70,
+          "growth": 1.73
+        }
+      },
+      "innate_skill": "焰燎江天",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "郝昭",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "防御",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 92,
+          "growth": 1.42
+        },
+        "intellect": {
+          "current": 97,
+          "growth": 2.02
+        },
+        "command": {
+          "current": 101,
+          "growth": 2.32
+        },
+        "initiative": {
+          "current": 56,
+          "growth": 1.68
+        }
+      },
+      "innate_skill": "千机重城",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "张宁",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "治疗",
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 56,
+          "growth": 0.7
+        },
+        "intellect": {
+          "current": 107,
+          "growth": 2.4
+        },
+        "command": {
+          "current": 102,
+          "growth": 1.85
+        },
+        "initiative": {
+          "current": 77,
+          "growth": 1.6
+        }
+      },
+      "innate_skill": "太平余响",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "庞统",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 54,
+          "growth": 0.55
+        },
+        "intellect": {
+          "current": 116,
+          "growth": 2.65
+        },
+        "command": {
+          "current": 83,
+          "growth": 1.75
+        },
+        "initiative": {
+          "current": 51,
+          "growth": 1.65
+        }
+      },
+      "innate_skill": "连环计",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "木鹿大王",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 73,
+          "growth": 1.22
+        },
+        "intellect": {
+          "current": 103,
+          "growth": 2.33
+        },
+        "command": {
+          "current": 82,
+          "growth": 1.76
+        },
+        "initiative": {
+          "current": 88,
+          "growth": 1.98
+        }
+      },
+      "innate_skill": "驱兽御象",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "张昭",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "治疗",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 16,
+          "growth": 0.23
+        },
+        "intellect": {
+          "current": 103,
+          "growth": 2.3
+        },
+        "command": {
+          "current": 83,
+          "growth": 1.65
+        },
+        "initiative": {
+          "current": 87,
+          "growth": 1.79
+        }
+      },
+      "innate_skill": "直谏固政",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "卞夫人",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "防御",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 19,
+          "growth": 0.23
+        },
+        "intellect": {
+          "current": 105,
+          "growth": 2.18
+        },
+        "command": {
+          "current": 106,
+          "growth": 1.8
+        },
+        "initiative": {
+          "current": 57,
+          "growth": 1.5
+        }
+      },
+      "innate_skill": "素衣约俭",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "曹丕",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "防御",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 89,
+          "growth": 1.62
+        },
+        "intellect": {
+          "current": 97,
+          "growth": 2.28
+        },
+        "command": {
+          "current": 103,
+          "growth": 2.12
+        },
+        "initiative": {
+          "current": 62,
+          "growth": 1.62
+        }
+      },
+      "innate_skill": "权御九锡",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "诸葛瑾",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 38,
+          "growth": 0.55
+        },
+        "intellect": {
+          "current": 104,
+          "growth": 2.35
+        },
+        "command": {
+          "current": 86,
+          "growth": 2.28
+        },
+        "initiative": {
+          "current": 78,
+          "growth": 1.32
+        }
+      },
+      "innate_skill": "慎思笃行",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "关羽",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 120,
+          "growth": 2.75
+        },
+        "intellect": {
+          "current": 86,
+          "growth": 1.35
+        },
+        "command": {
+          "current": 104,
+          "growth": 2.13
+        },
+        "initiative": {
+          "current": 79,
+          "growth": 2.43
+        }
+      },
+      "innate_skill": "威震华夏",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "赵云",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 117,
+          "growth": 2.65
+        },
+        "intellect": {
+          "current": 77,
+          "growth": 1.52
+        },
+        "command": {
+          "current": 107,
+          "growth": 2.15
+        },
+        "initiative": {
+          "current": 66,
+          "growth": 2.29
+        }
+      },
+      "innate_skill": "七进七出",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "鲁肃",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 72,
+          "growth": 0.36
+        },
+        "intellect": {
+          "current": 109,
+          "growth": 2.4
+        },
+        "command": {
+          "current": 98,
+          "growth": 1.65
+        },
+        "initiative": {
+          "current": 80,
+          "growth": 2.09
+        }
+      },
+      "innate_skill": "划湘分荆",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "甘宁",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 112,
+          "growth": 2.51
+        },
+        "intellect": {
+          "current": 84,
+          "growth": 1.32
+        },
+        "command": {
+          "current": 107,
+          "growth": 1.75
+        },
+        "initiative": {
+          "current": 71,
+          "growth": 2.59
+        }
+      },
+      "innate_skill": "锦帆渠魁",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "许褚",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 114,
+          "growth": 2.75
+        },
+        "intellect": {
+          "current": 45,
+          "growth": 0.43
+        },
+        "command": {
+          "current": 95,
+          "growth": 1.64
+        },
+        "initiative": {
+          "current": 69,
+          "growth": 2.6
+        }
+      },
+      "innate_skill": "裸衣血战",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "邓艾",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "治疗",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 94,
+          "growth": 1.8
+        },
+        "intellect": {
+          "current": 101,
+          "growth": 2.1
+        },
+        "command": {
+          "current": 100,
+          "growth": 1.73
+        },
+        "initiative": {
+          "current": 66,
+          "growth": 1.75
+        }
+      },
+      "innate_skill": "屯田令",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "马超",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 118,
+          "growth": 2.78
+        },
+        "intellect": {
+          "current": 58,
+          "growth": 1.01
+        },
+        "command": {
+          "current": 103,
+          "growth": 1.72
+        },
+        "initiative": {
+          "current": 75,
+          "growth": 2.53
+        }
+      },
+      "innate_skill": "纵马横枪",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "郭嘉",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 36,
+          "growth": 0.21
+        },
+        "intellect": {
+          "current": 118,
+          "growth": 2.74
+        },
+        "command": {
+          "current": 92,
+          "growth": 1.7
+        },
+        "initiative": {
+          "current": 53,
+          "growth": 1.81
+        }
+      },
+      "innate_skill": "算无遗策",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "典韦",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "防御",
+        "兵刃",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 120,
+          "growth": 2.78
+        },
+        "intellect": {
+          "current": 42,
+          "growth": 0.37
+        },
+        "command": {
+          "current": 114,
+          "growth": 1.75
+        },
+        "initiative": {
+          "current": 65,
+          "growth": 2.3
+        }
+      },
+      "innate_skill": "古之恶来",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "孙尚香",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 107,
+          "growth": 2.38
+        },
+        "intellect": {
+          "current": 79,
+          "growth": 0.98
+        },
+        "command": {
+          "current": 97,
+          "growth": 1.66
+        },
+        "initiative": {
+          "current": 70,
+          "growth": 2.41
+        }
+      },
+      "innate_skill": "弓腰姬",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "吕蒙",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 93,
+          "growth": 1.9
+        },
+        "intellect": {
+          "current": 106,
+          "growth": 2.38
+        },
+        "command": {
+          "current": 103,
+          "growth": 1.8
+        },
+        "initiative": {
+          "current": 77,
+          "growth": 2.19
+        }
+      },
+      "innate_skill": "白衣渡江",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "董卓",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "文武",
+        "防御",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 101,
+          "growth": 2.2
+        },
+        "intellect": {
+          "current": 87,
+          "growth": 1.42
+        },
+        "command": {
+          "current": 110,
+          "growth": 2.1
+        },
+        "initiative": {
+          "current": 85,
+          "growth": 1.93
+        }
+      },
+      "innate_skill": "权倾朝野",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "吕布",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 125,
+          "growth": 3.0
+        },
+        "intellect": {
+          "current": 38,
+          "growth": 0.7
+        },
+        "command": {
+          "current": 93,
+          "growth": 1.89
+        },
+        "initiative": {
+          "current": 76,
+          "growth": 2.57
+        }
+      },
+      "innate_skill": "骁勇无前",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "华佗",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "治疗",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 13,
+          "growth": 0.35
+        },
+        "intellect": {
+          "current": 106,
+          "growth": 2.35
+        },
+        "command": {
+          "current": 68,
+          "growth": 1.6
+        },
+        "initiative": {
+          "current": 55,
+          "growth": 1.73
+        }
+      },
+      "innate_skill": "麻沸散",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "张角",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 35,
+          "growth": 0.43
+        },
+        "intellect": {
+          "current": 113,
+          "growth": 2.55
+        },
+        "command": {
+          "current": 105,
+          "growth": 1.99
+        },
+        "initiative": {
+          "current": 62,
+          "growth": 1.53
+        }
+      },
+      "innate_skill": "黄天当立",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "貂蝉",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "防御",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 20,
+          "growth": 0.41
+        },
+        "intellect": {
+          "current": 104,
+          "growth": 2.22
+        },
+        "command": {
+          "current": 97,
+          "growth": 1.75
+        },
+        "initiative": {
+          "current": 55,
+          "growth": 2.03
+        }
+      },
+      "innate_skill": "闭月",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "马云禄",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 104,
+          "growth": 2.43
+        },
+        "intellect": {
+          "current": 53,
+          "growth": 1.24
+        },
+        "command": {
+          "current": 89,
+          "growth": 1.65
+        },
+        "initiative": {
+          "current": 93,
+          "growth": 2.54
+        }
+      },
+      "innate_skill": "红妆缭乱",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "田丰",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 51,
+          "growth": 0.33
+        },
+        "intellect": {
+          "current": 95,
+          "growth": 2.24
+        },
+        "command": {
+          "current": 73,
+          "growth": 1.67
+        },
+        "initiative": {
+          "current": 76,
+          "growth": 2.12
+        }
+      },
+      "innate_skill": "荐计阻敌",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "高顺",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "防御",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 101,
+          "growth": 2.12
+        },
+        "intellect": {
+          "current": 78,
+          "growth": 0.75
+        },
+        "command": {
+          "current": 109,
+          "growth": 2.21
+        },
+        "initiative": {
+          "current": 75,
+          "growth": 1.74
+        }
+      },
+      "innate_skill": "誓死无退",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "周泰",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "防御",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 87,
+          "growth": 1.5
+        },
+        "intellect": {
+          "current": 52,
+          "growth": 0.78
+        },
+        "command": {
+          "current": 112,
+          "growth": 2.21
+        },
+        "initiative": {
+          "current": 63,
+          "growth": 1.45
+        }
+      },
+      "innate_skill": "不屈意志",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "太史慈",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 110,
+          "growth": 2.49
+        },
+        "intellect": {
+          "current": 94,
+          "growth": 1.22
+        },
+        "command": {
+          "current": 108,
+          "growth": 1.89
+        },
+        "initiative": {
+          "current": 80,
+          "growth": 2.54
+        }
+      },
+      "innate_skill": "弦无虚发",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "魏延",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 118,
+          "growth": 2.66
+        },
+        "intellect": {
+          "current": 93,
+          "growth": 1.6
+        },
+        "command": {
+          "current": 102,
+          "growth": 2.16
+        },
+        "initiative": {
+          "current": 56,
+          "growth": 1.63
+        }
+      },
+      "innate_skill": "子午奇谋",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "刘禅",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 47,
+          "growth": 0.52
+        },
+        "intellect": {
+          "current": 69,
+          "growth": 1.96
+        },
+        "command": {
+          "current": 101,
+          "growth": 2.35
+        },
+        "initiative": {
+          "current": 56,
+          "growth": 1.62
+        }
+      },
+      "innate_skill": "释权御下",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "甄洛",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "治疗",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 22,
+          "growth": 0.23
+        },
+        "intellect": {
+          "current": 103,
+          "growth": 2.16
+        },
+        "command": {
+          "current": 103,
+          "growth": 1.62
+        },
+        "initiative": {
+          "current": 56,
+          "growth": 1.55
+        }
+      },
+      "innate_skill": "流风回雪",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "张飞",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 121,
+          "growth": 2.78
+        },
+        "intellect": {
+          "current": 65,
+          "growth": 1.04
+        },
+        "command": {
+          "current": 99,
+          "growth": 1.84
+        },
+        "initiative": {
+          "current": 70,
+          "growth": 2.29
+        }
+      },
+      "innate_skill": "万人之敌",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "黄月英",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "治疗",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 31,
+          "growth": 0.33
+        },
+        "intellect": {
+          "current": 109,
+          "growth": 2.28
+        },
+        "command": {
+          "current": 93,
+          "growth": 1.62
+        },
+        "initiative": {
+          "current": 46,
+          "growth": 2.0
+        }
+      },
+      "innate_skill": "木牛流马",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "荀彧",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "治疗",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 37,
+          "growth": 0.19
+        },
+        "intellect": {
+          "current": 120,
+          "growth": 2.7
+        },
+        "command": {
+          "current": 78,
+          "growth": 1.6
+        },
+        "initiative": {
+          "current": 57,
+          "growth": 1.65
+        }
+      },
+      "innate_skill": "建计举人",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "夏侯渊",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 107,
+          "growth": 2.4
+        },
+        "intellect": {
+          "current": 59,
+          "growth": 0.75
+        },
+        "command": {
+          "current": 101,
+          "growth": 1.74
+        },
+        "initiative": {
+          "current": 94,
+          "growth": 2.81
+        }
+      },
+      "innate_skill": "神速奔袭",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "曹仁",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "防御",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 81,
+          "growth": 1.35
+        },
+        "intellect": {
+          "current": 79,
+          "growth": 1.53
+        },
+        "command": {
+          "current": 113,
+          "growth": 2.35
+        },
+        "initiative": {
+          "current": 44,
+          "growth": 1.55
+        }
+      },
+      "innate_skill": "固镇襄樊",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "黄忠",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 115,
+          "growth": 2.51
+        },
+        "intellect": {
+          "current": 71,
+          "growth": 1.32
+        },
+        "command": {
+          "current": 101,
+          "growth": 1.69
+        },
+        "initiative": {
+          "current": 58,
+          "growth": 2.23
+        }
+      },
+      "innate_skill": "定军扬威",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "徐盛",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "防御",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 89,
+          "growth": 1.61
+        },
+        "intellect": {
+          "current": 87,
+          "growth": 1.89
+        },
+        "command": {
+          "current": 107,
+          "growth": 2.08
+        },
+        "initiative": {
+          "current": 34,
+          "growth": 1.52
+        }
+      },
+      "innate_skill": "百里疑城",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "李儒",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 27,
+          "growth": 0.35
+        },
+        "intellect": {
+          "current": 105,
+          "growth": 2.48
+        },
+        "command": {
+          "current": 88,
+          "growth": 1.48
+        },
+        "initiative": {
+          "current": 60,
+          "growth": 1.99
+        }
+      },
+      "innate_skill": "鸩饮毒弑",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "庞德",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 106,
+          "growth": 2.4
+        },
+        "intellect": {
+          "current": 71,
+          "growth": 0.78
+        },
+        "command": {
+          "current": 93,
+          "growth": 1.69
+        },
+        "initiative": {
+          "current": 73,
+          "growth": 2.69
+        }
+      },
+      "innate_skill": "陷阵蹈难",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "张宝",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 66,
+          "growth": 0.24
+        },
+        "intellect": {
+          "current": 101,
+          "growth": 2.25
+        },
+        "command": {
+          "current": 99,
+          "growth": 1.73
+        },
+        "initiative": {
+          "current": 65,
+          "growth": 1.75
+        }
+      },
+      "innate_skill": "妖风大作",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "袁绍",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "文武",
+        "辅助",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 80,
+          "growth": 2.0
+        },
+        "intellect": {
+          "current": 92,
+          "growth": 1.8
+        },
+        "command": {
+          "current": 105,
+          "growth": 2.03
+        },
+        "initiative": {
+          "current": 68,
+          "growth": 2.25
+        }
+      },
+      "innate_skill": "合聚群雄",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "祝融夫人",
+      "faction": "群",
+      "race": "夷族",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 112,
+          "growth": 2.46
+        },
+        "intellect": {
+          "current": 72,
+          "growth": 0.9
+        },
+        "command": {
+          "current": 91,
+          "growth": 1.95
+        },
+        "initiative": {
+          "current": 82,
+          "growth": 2.18
+        }
+      },
+      "innate_skill": "南疆烈刃",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "陈宫",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 55,
+          "growth": 0.63
+        },
+        "intellect": {
+          "current": 110,
+          "growth": 2.54
+        },
+        "command": {
+          "current": 86,
+          "growth": 1.87
+        },
+        "initiative": {
+          "current": 73,
+          "growth": 1.94
+        }
+      },
+      "innate_skill": "智令从计",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "群孙坚",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 106,
+          "growth": 2.62
+        },
+        "intellect": {
+          "current": 70,
+          "growth": 1.55
+        },
+        "command": {
+          "current": 100,
+          "growth": 2.34
+        },
+        "initiative": {
+          "current": 85,
+          "growth": 1.92
+        }
+      },
+      "innate_skill": "诛凶殄逆",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "法正",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 53,
+          "growth": 0.29
+        },
+        "intellect": {
+          "current": 112,
+          "growth": 2.59
+        },
+        "command": {
+          "current": 91,
+          "growth": 1.64
+        },
+        "initiative": {
+          "current": 87,
+          "growth": 2.3
+        }
+      },
+      "innate_skill": "暗事知机",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "甘夫人",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "治疗",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 25,
+          "growth": 0.29
+        },
+        "intellect": {
+          "current": 102,
+          "growth": 1.95
+        },
+        "command": {
+          "current": 106,
+          "growth": 1.62
+        },
+        "initiative": {
+          "current": 90,
+          "growth": 1.68
+        }
+      },
+      "innate_skill": "皇思淑仁",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "张郃",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 104,
+          "growth": 2.59
+        },
+        "intellect": {
+          "current": 81,
+          "growth": 0.77
+        },
+        "command": {
+          "current": 101,
+          "growth": 1.91
+        },
+        "initiative": {
+          "current": 67,
+          "growth": 1.93
+        }
+      },
+      "innate_skill": "大破街亭",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "小乔",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "治疗",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 22,
+          "growth": 0.38
+        },
+        "intellect": {
+          "current": 94,
+          "growth": 2.14
+        },
+        "command": {
+          "current": 88,
+          "growth": 1.64
+        },
+        "initiative": {
+          "current": 73,
+          "growth": 2.39
+        }
+      },
+      "innate_skill": "天香",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "孙策",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 112,
+          "growth": 2.59
+        },
+        "intellect": {
+          "current": 77,
+          "growth": 1.3
+        },
+        "command": {
+          "current": 110,
+          "growth": 2.12
+        },
+        "initiative": {
+          "current": 74,
+          "growth": 2.53
+        }
+      },
+      "innate_skill": "制霸江东",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "程昱",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 47,
+          "growth": 0.57
+        },
+        "intellect": {
+          "current": 111,
+          "growth": 2.46
+        },
+        "command": {
+          "current": 84,
+          "growth": 1.73
+        },
+        "initiative": {
+          "current": 73,
+          "growth": 2.24
+        }
+      },
+      "innate_skill": "勇冠贲育",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "于禁",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "防御",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 88,
+          "growth": 1.5
+        },
+        "intellect": {
+          "current": 70,
+          "growth": 0.79
+        },
+        "command": {
+          "current": 102,
+          "growth": 2.05
+        },
+        "initiative": {
+          "current": 44,
+          "growth": 1.5
+        }
+      },
+      "innate_skill": "持军毅重",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "徐晃",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 105,
+          "growth": 2.58
+        },
+        "intellect": {
+          "current": 79,
+          "growth": 0.88
+        },
+        "command": {
+          "current": 106,
+          "growth": 1.75
+        },
+        "initiative": {
+          "current": 75,
+          "growth": 2.12
+        }
+      },
+      "innate_skill": "长驱直入",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "关平",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 108,
+          "growth": 2.42
+        },
+        "intellect": {
+          "current": 52,
+          "growth": 0.99
+        },
+        "command": {
+          "current": 100,
+          "growth": 1.67
+        },
+        "initiative": {
+          "current": 81,
+          "growth": 2.22
+        }
+      },
+      "innate_skill": "龙吟四海",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "程普",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 79,
+          "growth": 1.58
+        },
+        "intellect": {
+          "current": 81,
+          "growth": 1.54
+        },
+        "command": {
+          "current": 91,
+          "growth": 2.32
+        },
+        "initiative": {
+          "current": 59,
+          "growth": 1.7
+        }
+      },
+      "innate_skill": "兴王定霸",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "周仓",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "防御",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 89,
+          "growth": 1.7
+        },
+        "intellect": {
+          "current": 70,
+          "growth": 1.02
+        },
+        "command": {
+          "current": 109,
+          "growth": 2.05
+        },
+        "initiative": {
+          "current": 71,
+          "growth": 1.92
+        }
+      },
+      "innate_skill": "忠烈勇武",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "颜良",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 107,
+          "growth": 2.4
+        },
+        "intellect": {
+          "current": 50,
+          "growth": 0.76
+        },
+        "command": {
+          "current": 92,
+          "growth": 1.69
+        },
+        "initiative": {
+          "current": 77,
+          "growth": 2.56
+        }
+      },
+      "innate_skill": "膂力过人",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "文丑",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 108,
+          "growth": 2.4
+        },
+        "intellect": {
+          "current": 45,
+          "growth": 0.67
+        },
+        "command": {
+          "current": 91,
+          "growth": 1.68
+        },
+        "initiative": {
+          "current": 76,
+          "growth": 2.4
+        }
+      },
+      "innate_skill": "交锋震威",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "张梁",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "防御",
+        "兵刃",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 105,
+          "growth": 2.15
+        },
+        "intellect": {
+          "current": 47,
+          "growth": 0.51
+        },
+        "command": {
+          "current": 109,
+          "growth": 1.98
+        },
+        "initiative": {
+          "current": 73,
+          "growth": 2.08
+        }
+      },
+      "innate_skill": "妖武",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "黄盖",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 94,
+          "growth": 1.58
+        },
+        "intellect": {
+          "current": 92,
+          "growth": 1.62
+        },
+        "command": {
+          "current": 113,
+          "growth": 2.18
+        },
+        "initiative": {
+          "current": 83,
+          "growth": 1.91
+        }
+      },
+      "innate_skill": "苦肉计",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "华雄",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 105,
+          "growth": 2.39
+        },
+        "intellect": {
+          "current": 43,
+          "growth": 0.65
+        },
+        "command": {
+          "current": 87,
+          "growth": 1.79
+        },
+        "initiative": {
+          "current": 83,
+          "growth": 2.48
+        }
+      },
+      "innate_skill": "耀武扬威",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "张春华",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 43,
+          "growth": 0.35
+        },
+        "intellect": {
+          "current": 96,
+          "growth": 2.19
+        },
+        "command": {
+          "current": 93,
+          "growth": 2.12
+        },
+        "initiative": {
+          "current": 69,
+          "growth": 1.56
+        }
+      },
+      "innate_skill": "荼蘼心计",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "糜夫人",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 21,
+          "growth": 0.41
+        },
+        "intellect": {
+          "current": 93,
+          "growth": 2.08
+        },
+        "command": {
+          "current": 80,
+          "growth": 1.78
+        },
+        "initiative": {
+          "current": 92,
+          "growth": 1.83
+        }
+      },
+      "innate_skill": "托孤赴义",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "公孙瓒",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "文武",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 99,
+          "growth": 2.01
+        },
+        "intellect": {
+          "current": 86,
+          "growth": 1.91
+        },
+        "command": {
+          "current": 103,
+          "growth": 1.9
+        },
+        "initiative": {
+          "current": 96,
+          "growth": 2.3
+        }
+      },
+      "innate_skill": "威震塞外",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "凌统",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 102,
+          "growth": 2.18
+        },
+        "intellect": {
+          "current": 63,
+          "growth": 0.88
+        },
+        "command": {
+          "current": 89,
+          "growth": 1.42
+        },
+        "initiative": {
+          "current": 90,
+          "growth": 2.42
+        }
+      },
+      "innate_skill": "旋略勇进",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "王双",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 106,
+          "growth": 2.52
+        },
+        "intellect": {
+          "current": 54,
+          "growth": 0.88
+        },
+        "command": {
+          "current": 88,
+          "growth": 1.68
+        },
+        "initiative": {
+          "current": 87,
+          "growth": 2.51
+        }
+      },
+      "innate_skill": "恃勇克敌",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "吴国太",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "防御",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 60,
+          "growth": 0.61
+        },
+        "intellect": {
+          "current": 94,
+          "growth": 2.24
+        },
+        "command": {
+          "current": 91,
+          "growth": 2.18
+        },
+        "initiative": {
+          "current": 84,
+          "growth": 1.91
+        }
+      },
+      "innate_skill": "凤仪淑慎",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "袁术",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "防御",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 76,
+          "growth": 1.86
+        },
+        "intellect": {
+          "current": 89,
+          "growth": 1.83
+        },
+        "command": {
+          "current": 104,
+          "growth": 2.18
+        },
+        "initiative": {
+          "current": 80,
+          "growth": 1.91
+        }
+      },
+      "innate_skill": "僭号天子",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "马腾",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "防御",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 84,
+          "growth": 2.07
+        },
+        "intellect": {
+          "current": 59,
+          "growth": 0.73
+        },
+        "command": {
+          "current": 101,
+          "growth": 2.23
+        },
+        "initiative": {
+          "current": 91,
+          "growth": 1.87
+        }
+      },
+      "innate_skill": "雄踞西凉",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "步练师",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 33,
+          "growth": 0.38
+        },
+        "intellect": {
+          "current": 105,
+          "growth": 2.19
+        },
+        "command": {
+          "current": 97,
+          "growth": 1.69
+        },
+        "initiative": {
+          "current": 81,
+          "growth": 2.25
+        }
+      },
+      "innate_skill": "淑懿之德",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "荀攸",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 41,
+          "growth": 0.59
+        },
+        "intellect": {
+          "current": 114,
+          "growth": 2.45
+        },
+        "command": {
+          "current": 87,
+          "growth": 1.69
+        },
+        "initiative": {
+          "current": 59,
+          "growth": 2.15
+        }
+      },
+      "innate_skill": "十二奇策",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "关银屏",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 108,
+          "growth": 2.55
+        },
+        "intellect": {
+          "current": 60,
+          "growth": 0.99
+        },
+        "command": {
+          "current": 89,
+          "growth": 1.78
+        },
+        "initiative": {
+          "current": 86,
+          "growth": 2.36
+        }
+      },
+      "innate_skill": "虎啸生威",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "于吉",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 12,
+          "growth": 0.21
+        },
+        "intellect": {
+          "current": 103,
+          "growth": 2.51
+        },
+        "command": {
+          "current": 74,
+          "growth": 1.87
+        },
+        "initiative": {
+          "current": 86,
+          "growth": 1.97
+        }
+      },
+      "innate_skill": "风急雨晦",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "曹纯",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 94,
+          "growth": 2.13
+        },
+        "intellect": {
+          "current": 68,
+          "growth": 0.67
+        },
+        "command": {
+          "current": 100,
+          "growth": 1.91
+        },
+        "initiative": {
+          "current": 77,
+          "growth": 2.0
+        }
+      },
+      "innate_skill": "天下骁锐",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "王平",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "防御",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 89,
+          "growth": 1.9
+        },
+        "intellect": {
+          "current": 72,
+          "growth": 1.57
+        },
+        "command": {
+          "current": 102,
+          "growth": 2.32
+        },
+        "initiative": {
+          "current": 62,
+          "growth": 1.69
+        }
+      },
+      "innate_skill": "无当飞军",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "钟会",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "文武",
+        "防御",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 102,
+          "growth": 2.31
+        },
+        "intellect": {
+          "current": 103,
+          "growth": 2.33
+        },
+        "command": {
+          "current": 107,
+          "growth": 2.44
+        },
+        "initiative": {
+          "current": 85,
+          "growth": 1.83
+        }
+      },
+      "innate_skill": "怀锋献策",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "朱儁",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 82,
+          "growth": 1.9
+        },
+        "intellect": {
+          "current": 99,
+          "growth": 2.21
+        },
+        "command": {
+          "current": 106,
+          "growth": 2.12
+        },
+        "initiative": {
+          "current": 88,
+          "growth": 1.67
+        }
+      },
+      "innate_skill": "围师必阙",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "乐进",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 113,
+          "growth": 2.35
+        },
+        "intellect": {
+          "current": 56,
+          "growth": 0.86
+        },
+        "command": {
+          "current": 104,
+          "growth": 1.81
+        },
+        "initiative": {
+          "current": 92,
+          "growth": 2.33
+        }
+      },
+      "innate_skill": "每战先登",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "王异",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 17,
+          "growth": 0.21
+        },
+        "intellect": {
+          "current": 110,
+          "growth": 2.58
+        },
+        "command": {
+          "current": 94,
+          "growth": 1.92
+        },
+        "initiative": {
+          "current": 86,
+          "growth": 1.76
+        }
+      },
+      "innate_skill": "巧策引锋",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "陆抗",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 78,
+          "growth": 1.73
+        },
+        "intellect": {
+          "current": 109,
+          "growth": 2.6
+        },
+        "command": {
+          "current": 108,
+          "growth": 1.9
+        },
+        "initiative": {
+          "current": 64,
+          "growth": 1.85
+        }
+      },
+      "innate_skill": "决堰倾涛",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "周瑜",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "谋略",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 77,
+          "growth": 0.95
+        },
+        "intellect": {
+          "current": 114,
+          "growth": 2.75
+        },
+        "command": {
+          "current": 104,
+          "growth": 2.01
+        },
+        "initiative": {
+          "current": 62,
+          "growth": 1.73
+        }
+      },
+      "innate_skill": "临机制胜",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "孟获",
+      "faction": "群",
+      "race": "夷族",
+      "current_level": 5,
+      "roles": [
+        "防御",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 97,
+          "growth": 2.1
+        },
+        "intellect": {
+          "current": 67,
+          "growth": 0.64
+        },
+        "command": {
+          "current": 108,
+          "growth": 2.44
+        },
+        "initiative": {
+          "current": 77,
+          "growth": 1.92
+        }
+      },
+      "innate_skill": "雄护南疆",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "大乔",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "治疗",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 24,
+          "growth": 0.35
+        },
+        "intellect": {
+          "current": 95,
+          "growth": 2.15
+        },
+        "command": {
+          "current": 106,
+          "growth": 1.69
+        },
+        "initiative": {
+          "current": 35,
+          "growth": 1.72
+        }
+      },
+      "innate_skill": "国色",
+      "troop_type": "枪兵"
+    },
+    {
+      "name": "夏侯惇",
+      "faction": "魏",
+      "current_level": 5,
+      "roles": [
+        "防御",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 102,
+          "growth": 2.4
+        },
+        "intellect": {
+          "current": 72,
+          "growth": 1.02
+        },
+        "command": {
+          "current": 113,
+          "growth": 2.03
+        },
+        "initiative": {
+          "current": 71,
+          "growth": 1.78
+        }
+      },
+      "innate_skill": "刚烈",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "徐庶",
+      "faction": "蜀",
+      "current_level": 5,
+      "roles": [
+        "文武",
+        "后排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 95,
+          "growth": 1.95
+        },
+        "intellect": {
+          "current": 109,
+          "growth": 2.55
+        },
+        "command": {
+          "current": 93,
+          "growth": 1.59
+        },
+        "initiative": {
+          "current": 87,
+          "growth": 2.36
+        }
+      },
+      "innate_skill": "折节学问",
+      "troop_type": "骑兵"
+    },
+    {
+      "name": "蔡文姬",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "治疗",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 18,
+          "growth": 0.24
+        },
+        "intellect": {
+          "current": 107,
+          "growth": 2.29
+        },
+        "command": {
+          "current": 94,
+          "growth": 1.59
+        },
+        "initiative": {
+          "current": 87,
+          "growth": 1.92
+        }
+      },
+      "innate_skill": "悲愤诗",
+      "troop_type": "弓兵"
+    },
+    {
+      "name": "吴孙坚",
+      "faction": "吴",
+      "current_level": 5,
+      "roles": [
+        "兵刃",
+        "前排"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 100,
+          "growth": 2.18
+        },
+        "intellect": {
+          "current": 82,
+          "growth": 0.77
+        },
+        "command": {
+          "current": 113,
+          "growth": 2.3
+        },
+        "initiative": {
+          "current": 73,
+          "growth": 1.71
+        }
+      },
+      "innate_skill": "武烈破虏",
+      "troop_type": "盾兵"
+    },
+    {
+      "name": "邹氏",
+      "faction": "群",
+      "current_level": 5,
+      "roles": [
+        "辅助",
+        "治疗",
+        "均衡"
+      ],
+      "cost": 5,
+      "stats": {
+        "force": {
+          "current": 16,
+          "growth": 0.25
+        },
+        "intellect": {
+          "current": 94,
+          "growth": 1.85
+        },
+        "command": {
+          "current": 88,
+          "growth": 1.65
+        },
+        "initiative": {
+          "current": 64,
+          "growth": 1.73
+        }
+      },
+      "innate_skill": "顾盼生姿",
+      "troop_type": "盾兵"
+    }
+  ]
+}

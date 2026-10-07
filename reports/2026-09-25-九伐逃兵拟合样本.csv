@@ -1,0 +1,7 @@
+﻿session_id,force,intellect,observed_escape,target_troops_before,target,attacker_weak_ratio_multiplier,target_general_damage_reduction_pct_metadata_only_escape_ignores_it,counterfactual_only_dividing_by_target_reduction_do_not_use,status_note,old_2.4_sum_minus_631
+20260924_042022_eb9823e3,460.93,550.85,2010,2803,祝融夫人,1.0,12.55,2298.4562607204116,text-only; attacker extra +8.5% appears in log,1797.272
+20260924_172329_73d9111f,482.5219,657.3132,1434,3929,刘禅,0.7,8.34,2234.967737913407,explicit attacker weakRatio 70,2104.60424
+20260924_172329_73d9111f,555.2815,640.1903,1556,1599,刘禅,0.7,7.34,2398.9392864851534,explicit attacker weakRatio 70,2238.13232
+20260924_234108_4e3b9d8f,575.52,687.23,2959,4082,邓艾,1.0,29.71,4209.702660406886,generic modifiers not normalized,2399.6
+20260925_011224_5b9bb088,480.0005,627.4508,2362,4964,诸葛亮,1.0,43.46,4177.573399363282,"uncensored; target also shows strategy-specific reduction 20.85%, escape applicability unknown",2026.88312
+20260925_045709_5e4deef5,474.07,591.19,2212,2326,马腾,1.0,7.49,2391.092854826505,"uncensored; decode failed, parsed visible text",1925.6239999999998

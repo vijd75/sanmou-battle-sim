@@ -1,0 +1,636 @@
+{
+  "metadata": {
+    "source": "user screenshots",
+    "note": "Only states with visible tooltip text are defined here. Unclear states stay pending until the user provides screenshots or explanations."
+  },
+  "statuses": [
+    {
+      "name": "焚烧",
+      "type": "负面状态",
+      "effect": "每个回合受到60% * 焚烧层数的谋略伤害",
+      "damage_kind": "谋略",
+      "damage_rate_per_stack": 0.60,
+      "max_stacks": 5,
+      "raw_text": "负面状态，每个回合受到60%*焚烧层数的谋略伤害，最多叠加5层"
+    },
+    {
+      "name": "火攻",
+      "type": "异常状态",
+      "effect": "智力降低15点",
+      "intellect_reduction": 15,
+      "raw_text": "异常状态，智力降低15点。"
+    },
+    {
+      "name": "逃兵",
+      "type": "负面状态",
+      "implementation_status": "pending_user_confirmation",
+      "raw_text": "逃兵在获得时立即结算。九伐中原逃兵量为武力×2.4+智力×2.4-631；威震华夏逃兵量为武力×2.4-330。程昱与孙坚的逃兵公式待游戏内实测拟合。"
+    },
+    {
+      "name": "布阵状态",
+      "type": "功能性增益状态组",
+      "states": [
+        { "name": "布阵一", "effect": "清醒" },
+        { "name": "布阵二", "effect": "1层抵御" },
+        { "name": "布阵三", "effect": "谋略伤害提升8%" },
+        { "name": "布阵四", "effect": "15%奇谋" },
+        { "name": "布阵五", "effect": "攻心提升10%" },
+        { "name": "布阵六", "effect": "统率提升20点" },
+        { "name": "布阵七", "effect": "智力提升20点" },
+        { "name": "布阵八", "effect": "看破提升20%" }
+      ],
+      "raw_text": "布阵后可提供的功能性增益状态：布阵一：清醒；布阵二：1层抵御；布阵三：谋略伤害提升8%；布阵四：15%奇谋；布阵五：攻心提升10%；布阵六：统率提升20点；布阵七：智力提升20点；布阵八：看破提升20%（已持有清醒和抵御时视为持有布阵一和二）"
+    },
+    {
+      "name": "迟滞",
+      "type": "负面状态",
+      "effect": "指挥、被动战法造成的伤害降低4%",
+      "max_stacks": 9,
+      "raw_text": "负面状态，指挥、被动战法造成的伤害降低4%，最多叠加9层"
+    },
+    {
+      "name": "协防",
+      "type": "功能性状态",
+      "implementation_status": "pending_user_confirmation",
+      "raw_text": "截图中可确定焰燎江天会使友军智力最高单体获得协防，并可由协防队友承担周瑜受到的伤害；协防是否有通用规则待确认。"
+    },
+    {
+      "name": "军令",
+      "type": "层数状态",
+      "implementation_status": "pending_user_confirmation",
+      "raw_text": "截图中可确定兵动若神会获得军令，并由军令叠加我军全体统率；军令触发后的消耗/再次触发规则待确认。"
+    },
+    {
+      "name": "清醒",
+      "type": "功能性增益状态",
+      "effect": "使受到的控制状态暂时失去作用",
+      "suppresses_control_states": ["断粮", "技穷", "缴械", "嘲讽", "混乱", "震慑", "虚弱"],
+      "raw_text": "功能性增益状态，使受到的控制状态（断粮、技穷、缴械、嘲讽、混乱、震慑、虚弱）暂时失去作用。"
+    },
+    {
+      "name": "抵御",
+      "type": "功能性增益状态",
+      "effect": "使受到的伤害降低70%到90%，最多持有2层",
+      "damage_taken_reduction_min": 0.70,
+      "damage_taken_reduction_max": 0.90,
+      "max_stacks": 2,
+      "raw_text": "功能性增益状态，使受到的伤害降低70%到90%，最多持有2层。"
+    },
+    {
+      "name": "奇谋",
+      "type": "常规增益状态",
+      "effect": "造成谋略伤害时，有概率使谋略伤害提升50%",
+      "strategy_damage_bonus_on_trigger": 0.50,
+      "raw_text": "常规增益状态，造成谋略伤害时，有概率使谋略伤害提升50%。"
+    },
+    {
+      "name": "攻心",
+      "type": "功能性属性",
+      "implementation_status": "pending_user_confirmation",
+      "raw_text": "截图中作为乱世奸雄和布阵五相关效果出现，具体机制待确认。"
+    },
+    {
+      "name": "看破",
+      "type": "常规增益状态",
+      "effect": "造成谋略伤害时，无视目标部分智力",
+      "raw_text": "常规增益状态，造成谋略伤害时，无视目标部分智力。"
+    },
+    {
+      "name": "连环",
+      "type": "负面状态",
+      "effect": "受到伤害后，两名队友受到传递伤害",
+      "raw_text": "庞统「连环计」可在奇数回合对敌军全体施加1回合连环：受到伤害后，两名队友会受到12.5%→25%（受智力影响）的传递伤害。"
+    },
+    {
+      "name": "妖术",
+      "type": "异常状态",
+      "effect": "会心和奇谋伤害减少15%",
+      "critical_damage_reduction": 0.15,
+      "strategy_critical_damage_reduction": 0.15,
+      "raw_text": "异常状态，会心和奇谋伤害减少15%。"
+    },
+    {
+      "name": "素衣",
+      "type": "增益状态",
+      "effect": "受到伤害降低7.5%→15%（受智力影响），持续到回合结束，可叠加4次；获得时有50%概率获得1层抵御",
+      "max_stacks": 4,
+      "raw_text": "卞夫人「素衣约俭」：使我军兵力最低的2人获得素衣：受到伤害降低7.5%→15%（受智力影响），持续到回合结束，可叠加4次；并有50%概率获得1层抵御。"
+    },
+    {
+      "name": "九锡",
+      "type": "增益状态",
+      "effect": "每回合行动时，夺取敌军随机两人5→10点智力（受智力影响），可叠加，持续至战斗结束",
+      "raw_text": "曹丕「权御九锡」：我军先攻最低单体获得九锡：每回合行动时，夺取敌军随机两人5→10点智力（受智力影响），可叠加，持续至战斗结束。"
+    },
+    {
+      "name": "笃行",
+      "type": "层数状态",
+      "effect": "受到伤害降低，奇谋和会心伤害提升；回合结束时按层数触发伤害后清除",
+      "max_stacks": 5,
+      "raw_text": "诸葛瑾「慎思笃行」：受到伤害降低2%→4%（受智力影响），造成奇谋和会心伤害提升7.5%→15%，可叠加5层。回合结束时按笃行层数提升伤害系数、会心和奇谋几率，然后清除全部笃行层数。"
+    },
+    {
+      "name": "会心",
+      "type": "常规增益状态",
+      "effect": "造成兵刃伤害时，有概率使兵刃伤害提升50%",
+      "weapon_damage_bonus_on_trigger": 0.50,
+      "raw_text": "常规增益状态，造成兵刃伤害时有概率使兵刃伤害提升50%。"
+    },
+    {
+      "name": "缴械",
+      "type": "异常状态，控制状态",
+      "effect": "无法普通攻击",
+      "raw_text": "异常状态，控制状态，无法普通攻击。"
+    },
+    {
+      "name": "破甲",
+      "type": "常规增益状态",
+      "effect": "造成兵刃伤害时，无视目标部分统率",
+      "raw_text": "常规增益状态，造成兵刃伤害时，无视目标部分统率。"
+    },
+    {
+      "name": "连击率",
+      "type": "常规增益状态",
+      "effect": "可以额外进行1次普通攻击",
+      "extra_basic_attack_times": 1,
+      "raw_text": "常规增益状态，可以额外进行1次普通攻击。"
+    },
+    {
+      "name": "规避率",
+      "type": "功能性增益状态",
+      "effect": "受到伤害时有概率使该次伤害无效",
+      "raw_text": "功能性增益状态，受到伤害时有概率使该次伤害无效。"
+    },
+    {
+      "name": "畏惧",
+      "type": "异常状态",
+      "effect": "受到伤害提升10%",
+      "damage_taken_increase": 0.10,
+      "raw_text": "异常状态，受到伤害提升10%。"
+    },
+    {
+      "name": "控制状态",
+      "type": "状态分类",
+      "implementation_status": "pending_user_confirmation",
+      "raw_text": "关羽「威震华夏」在目标持有控制状态时使其产生逃兵，逃兵量为关羽当前武力×2.4-330。"
+    },
+    {
+      "name": "反击",
+      "type": "常规增益状态",
+      "effect": "受到普通攻击后，有概率对攻击方进行一次强力普通攻击（不触发追击战法），每回合最多反击5次",
+      "max_triggers_per_round": 5,
+      "raw_text": "常规增益状态，受到普通攻击后有概率对攻击方进行一次强力普通攻击（不触发追击战法），每回合最多反击5次"
+    },
+    {
+      "name": "异常状态",
+      "type": "状态分类",
+      "states": ["震慑", "缴械", "技穷", "混乱", "嘲讽", "虚弱", "断粮", "洪水", "火攻", "风暴", "畏惧", "妖术"],
+      "raw_text": "特殊负面状态包括：震慑、缴械、技穷、混乱、嘲讽、虚弱、断粮、洪水、火攻、风暴、畏惧、妖术，共计12种。"
+    },
+    {
+      "name": "断粮",
+      "type": "异常状态，控制状态",
+      "effect": "恢复兵力效果减少70%",
+      "healing_effect_reduction": 0.70,
+      "raw_text": "异常状态，控制状态，恢复兵力效果减少70%。"
+    },
+    {
+      "name": "黄天",
+      "type": "增益状态",
+      "effect": "发动准备战法时，有25%→50%概率跳过1回合准备，持续4回合",
+      "raw_text": "张角「黄天当立」：使自身获得黄天；发动准备战法时，有25%→50%概率跳过1回合准备，持续4回合。"
+    },
+    {
+      "name": "蓄力",
+      "type": "层数状态",
+      "effect": "成功普通攻击后可消耗所有蓄力层数进行额外普通攻击，普通攻击次数等于蓄力层数，最高10层",
+      "max_stacks": 10,
+      "raw_text": "太史慈「弦无虚发」：成功普通攻击后可消耗所有蓄力层数进行额外的普通攻击（无视缴械状态，普通攻击次数等于蓄力层数，可叠加，最高10层）。"
+    },
+    {
+      "name": "不屈",
+      "type": "增益状态",
+      "effect": "免疫1次致命伤害；每次触发后下次触发概率降低5%→10%",
+      "raw_text": "周泰「不屈意志」：自身即将阵亡且有队友存活时，有50%→100%概率触发不屈：免疫1次致命伤害。每次触发不屈后，下次触发概率降低5%→10%。"
+    },
+    {
+      "name": "流血",
+      "type": "负面状态",
+      "effect": "每个回合受到60% * 流血层数的兵刃伤害",
+      "damage_kind": "兵刃",
+      "damage_rate_per_stack": 0.60,
+      "max_stacks": 5,
+      "raw_text": "负面状态，每个回合受到60%*流血层数的兵刃伤害，最多叠加5层。"
+    },
+    {
+      "name": "狂骨",
+      "type": "层数状态",
+      "effect": "倒戈提升3%，可叠加15层",
+      "lifesteal_type": "倒戈",
+      "lifesteal_bonus_per_stack": 0.03,
+      "max_stacks": 15,
+      "raw_text": "魏延「子午奇谋」：每次造成流血伤害后，获得1层狂骨：倒戈提升3%，可叠加15层。"
+    },
+    {
+      "name": "旨意",
+      "type": "常规增益状态",
+      "effect": "受到伤害降低10%（受统率影响），破甲和看破提升3%（受统率影响），可叠加，持续到战斗结束；每次受到伤害后，失去1层旨意",
+      "damage_taken_reduction": 0.10,
+      "armor_pierce_bonus": 0.03,
+      "insight_bonus": 0.03,
+      "stackable": true,
+      "duration": "持续到战斗结束",
+      "remove_stacks_after_damage_taken": 1,
+      "scales_with": ["统率"],
+      "raw_text": "常规增益状态，受到伤害降低10%（受统率影响），破甲和看破提升3%（受统率影响），可叠加，持续到战斗结束；每次受到伤害后，失去1层旨意。"
+    },
+    {
+      "name": "放权",
+      "type": "功能性状态",
+      "effect": "刘禅将兵力给予的目标标记；自身受到伤害时可由放权目标承担伤害，回合开始时放权目标获得旨意",
+      "raw_text": "刘禅「释权御下」：战斗开始时，放权给随机友军（优先前排）；自身受到伤害时可由放权目标承担伤害，每回合开始时给予放权目标1-2层旨意。"
+    },
+    {
+      "name": "洛神",
+      "type": "增益状态",
+      "effect": "恢复自身兵力，造成伤害提升12.5%→25%，获得洛神后的首次非普通攻击伤害必定触发会心和奇谋",
+      "heal_rate_at_level_1": 0.70,
+      "heal_rate_at_level_10": 1.40,
+      "damage_dealt_bonus_at_level_1": 0.125,
+      "damage_dealt_bonus_at_level_10": 0.25,
+      "duration_rounds": 1,
+      "raw_text": "甄洛「流风回雪」：获得1回合洛神：恢复自身兵力（治疗率为70%→140%，受智力影响），造成伤害提升12.5%→25%，获得洛神后的首次非普通攻击伤害必定触发会心和奇谋。"
+    },
+    {
+      "name": "震慑",
+      "type": "异常状态，控制状态",
+      "effect": "无法发动主动战法和普通攻击",
+      "raw_text": "异常状态，控制状态，无法发动主动战法和普通攻击。"
+    },
+    {
+      "name": "混乱",
+      "type": "异常状态，控制状态",
+      "effect": "普通攻击、主动战法、追击战法无差别选择目标",
+      "random_targeting_for": ["普通攻击", "主动战法", "追击战法"],
+      "raw_text": "异常状态，控制状态。普通攻击、主动战法、追击战法无差别选择目标。"
+    },
+    {
+      "name": "神速",
+      "type": "常规增益状态",
+      "effect": "造成伤害和会心几率提升2.5%→5%（受先攻影响），持续1回合",
+      "damage_dealt_bonus_at_level_1": 0.025,
+      "damage_dealt_bonus_at_level_10": 0.05,
+      "critical_chance_bonus_at_level_1": 0.025,
+      "critical_chance_bonus_at_level_10": 0.05,
+      "duration_rounds": 1,
+      "scales_with": ["先攻"],
+      "raw_text": "神速奔袭：造成伤害和会心几率提升2.5%→5%（受先攻影响），持续1回合。"
+    },
+    {
+      "name": "技穷",
+      "type": "异常状态，控制状态",
+      "effect": "无法发动主动战法",
+      "raw_text": "异常状态，控制状态，无法发动主动战法。"
+    },
+    {
+      "name": "洪水",
+      "type": "异常状态",
+      "effect": "统率降低20点",
+      "command_reduction": 20,
+      "raw_text": "异常状态，统率降低20点。"
+    },
+    {
+      "name": "鸩毒",
+      "type": "负面状态",
+      "effect": "每个回合受到60% * 鸩毒层数的谋略伤害，最多叠加5层",
+      "damage_kind": "谋略",
+      "damage_rate_per_stack": 0.60,
+      "max_stacks": 5,
+      "raw_text": "负面状态，每个回合受到60%*鸩毒层数的谋略伤害，最多叠加5层。"
+    },
+    {
+      "name": "鸩弑",
+      "type": "增益状态",
+      "effect": "对持有鸩毒状态的目标造成兵刃或谋略伤害后，有25%→50%概率增加目标1层鸩毒状态",
+      "trigger_chance_at_level_1": 0.25,
+      "trigger_chance_at_level_10": 0.50,
+      "state_added": "鸩毒",
+      "stacks_added": 1,
+      "raw_text": "李儒「鸩饮毒弑」：我军全体获得2回合鸩弑：对持有鸩毒状态的目标造成兵刃或谋略伤害后，有25%→50%概率增加目标1层鸩毒状态。"
+    },
+    {
+      "name": "风暴",
+      "type": "异常状态",
+      "effect": "先攻降低30点",
+      "initiative_reduction": 30,
+      "raw_text": "异常状态，先攻降低30点。"
+    },
+    {
+      "name": "属性降低状态",
+      "type": "状态分类",
+      "states": ["武力降低", "智力降低", "统率降低", "先攻降低"],
+      "raw_text": "负面状态，武力、智力、统率、先攻4种基础属性降低。"
+    },
+    {
+      "name": "从计",
+      "type": "增益状态",
+      "effect": "受到谋略伤害降低7.5%→15%（受智力影响）；发动追击战法后对敌军随机单体造成70%→140%谋略伤害（受目标武力影响）",
+      "strategy_damage_taken_reduction_at_level_1": 0.075,
+      "strategy_damage_taken_reduction_at_level_10": 0.15,
+      "counter_strategy_damage_rate_at_level_1": 0.70,
+      "counter_strategy_damage_rate_at_level_10": 1.40,
+      "duration_rounds": 1,
+      "scales_with": ["智力", "目标武力"],
+      "raw_text": "陈宫「智令从计」：受到谋略伤害降低7.5%→15%（受智力影响），发动追击战法后对敌军随机单体造成70%→140%谋略伤害（受目标武力影响）。"
+    },
+    {
+      "name": "凶逆",
+      "type": "负面状态",
+      "effect": "受到伤害提升1.5%→3%（受武力影响），可叠加5层",
+      "damage_taken_increase_at_level_1": 0.015,
+      "damage_taken_increase_at_level_10": 0.03,
+      "max_stacks": 5,
+      "scales_with": ["武力"],
+      "raw_text": "孙坚「诛凶殄逆」：受到伤害提升1.5%→3%（受武力影响），可叠加5层。"
+    },
+    {
+      "name": "暗事",
+      "type": "负面状态",
+      "effect": "下一次受到非普通攻击伤害后为攻击者恢复兵力，并额外受到来自法正的谋略伤害",
+      "heal_attacker_rate_at_level_1": 0.40,
+      "heal_attacker_rate_at_level_10": 0.80,
+      "extra_strategy_damage_rate_at_level_1": 0.60,
+      "extra_strategy_damage_rate_at_level_10": 1.20,
+      "trigger_condition": "下一次受到非普通攻击伤害后",
+      "raw_text": "法正「暗事知机」：下一次受到非普通攻击伤害后为攻击者恢复兵力（治疗率40%→80%，受智力影响），并额外受到来自法正的60%→120%谋略伤害。"
+    },
+    {
+      "name": "虚弱",
+      "type": "异常状态，控制状态",
+      "effect": "造成的最终伤害降低70%",
+      "final_damage_dealt_reduction": 0.70,
+      "raw_text": "异常状态，控制状态，造成的最终伤害降低70%。"
+    },
+    {
+      "name": "嘲讽",
+      "type": "异常状态，控制状态",
+      "effect": "强迫目标普通攻击自身",
+      "forced_basic_attack_target": "自身",
+      "raw_text": "异常状态，控制状态，强迫目标普通攻击自身。"
+    },
+    {
+      "name": "必中",
+      "type": "功能性增益状态",
+      "effect": "造成的伤害无法被规避",
+      "damage_cannot_be_evaded": true,
+      "raw_text": "功能性增益状态，造成的伤害无法被规避。"
+    },
+    {
+      "name": "倒戈",
+      "type": "常规增益状态",
+      "effect": "造成兵刃伤害时，根据伤害恢复自身兵力（不受其他治疗效果影响）",
+      "heal_self_from_weapon_damage": true,
+      "unaffected_by_other_healing_effects": true,
+      "raw_text": "常规增益状态，造成兵刃伤害时，根据伤害恢复自身兵力（不受其他治疗效果影响）。"
+    },
+    {
+      "name": "心计",
+      "type": "层数状态",
+      "effect": "谋略伤害提升1.5%→3%，最多持有10层；心计层数小于6层时额外普通攻击无法发动追击战法",
+      "strategy_damage_bonus_at_level_1": 0.015,
+      "strategy_damage_bonus_at_level_10": 0.03,
+      "max_stacks": 10,
+      "extra_basic_attack_chase_disabled_below_stacks": 6,
+      "raw_text": "张春华「荼蘼心计」：谋略伤害提升1.5%→3%，最多持有10层。每个回合智力最高单体行动后额外进行1次普通攻击（心计层数小于6层时无法发动追击战法）。"
+    },
+    {
+      "name": "庇佑",
+      "type": "常规增益状态",
+      "effect": "受到伤害降低，并在受到超过当前8%兵力的伤害时由友军队友各自分摊33%伤害",
+      "damage_taken_reduction_at_level_1": 0.10,
+      "damage_taken_reduction_at_level_10": 0.20,
+      "split_damage_threshold_current_troop_ratio": 0.08,
+      "split_damage_ratio_each_teammate": 0.33,
+      "max_triggers_per_general_per_round": 1,
+      "scales_with": ["智力"],
+      "raw_text": "吴国太「凤仪淑慎」：受到伤害降低10%→20%（受智力影响），且受到超过当前8%兵力时，则由友军队友各自为其分摊33%的伤害，每个武将每回合仅可触发一次。"
+    },
+    {
+      "name": "玉玺",
+      "type": "常规增益状态",
+      "effect": "伤害提升，且自身行动结束时对敌军全体造成兵刃伤害",
+      "damage_dealt_bonus_at_level_1": 0.075,
+      "damage_dealt_bonus_at_level_10": 0.15,
+      "end_action_weapon_damage_rate_at_level_1": 0.80,
+      "end_action_weapon_damage_rate_at_level_10": 1.60,
+      "scales_with": ["统率"],
+      "raw_text": "袁术「僭号天子」：玉玺：伤害提升7.5%→15%（受统率影响），自身行动结束时，对敌军全体造成80%→160%兵刃伤害（受玉玺拥有者统率影响）。"
+    },
+    {
+      "name": "安抚",
+      "type": "常规增益状态",
+      "effect": "谋略伤害提升，每个回合行动前恢复兵力",
+      "strategy_damage_bonus_at_level_1": 0.10,
+      "strategy_damage_bonus_at_level_10": 0.20,
+      "pre_action_heal_rate_at_level_1": 1.50,
+      "pre_action_heal_rate_at_level_10": 3.00,
+      "scales_with": ["智力"],
+      "raw_text": "步练师「淑懿之德」：谋略伤害提升10%→20%（受智力影响），每个回合行动前恢复兵力（治疗率150%→300%，受智力影响）。"
+    },
+    {
+      "name": "无当",
+      "type": "常规增益状态",
+      "effect": "造成伤害提升，无视兵种被克制带来的减益效果",
+      "damage_dealt_bonus_at_level_1": 0.07,
+      "damage_dealt_bonus_at_level_10": 0.14,
+      "ignore_troop_disadvantage_penalty": true,
+      "scales_with": ["统率"],
+      "raw_text": "王平「无当飞军」：造成伤害提升7%→14%（受统率影响），无视兵种被克制带来的减益效果。"
+    },
+    {
+      "name": "伏矢",
+      "type": "常规负面状态",
+      "effect": "受到伤害提升2%→4%，可叠加3层，持续到回合结束",
+      "damage_taken_increase_at_level_1": 0.02,
+      "damage_taken_increase_at_level_10": 0.04,
+      "max_stacks": 3,
+      "duration": "回合结束",
+      "raw_text": "王平「无当飞军」：受到伤害提升2%→4%，可叠加3层，持续到回合结束。"
+    },
+    {
+      "name": "施策",
+      "type": "常规增益状态",
+      "effect": "受到自带战法伤害降低，造成兵刃伤害前获得文韬，造成谋略伤害前消耗文韬并获得武略",
+      "innate_skill_damage_taken_reduction_at_level_1": 0.05,
+      "innate_skill_damage_taken_reduction_at_level_10": 0.10,
+      "scales_with": ["统率"],
+      "raw_text": "钟会「怀锋献策」：受到自带战法伤害降低5%→10%（受统率影响），且每次造成兵刃伤害前，获得文韬；每次造成谋略伤害前，消耗1层文韬并使自身获得1层武略。"
+    },
+    {
+      "name": "文韬",
+      "type": "常规增益状态",
+      "effect": "下次谋略伤害提升6%（受统率影响），可叠加3次",
+      "next_strategy_damage_bonus": 0.06,
+      "max_stacks": 3,
+      "scales_with": ["统率"],
+      "raw_text": "常规增益状态，下次谋略伤害提升6%（受统率影响），可叠加3次。"
+    },
+    {
+      "name": "武略",
+      "type": "常规增益状态",
+      "effect": "看破、破甲提升10%（受统率影响），可叠加5次",
+      "insight_bonus": 0.10,
+      "armor_break_bonus": 0.10,
+      "max_stacks": 5,
+      "scales_with": ["统率"],
+      "raw_text": "常规增益状态，看破、破甲提升10%（受统率影响），可叠加5次。"
+    },
+    {
+      "name": "先登",
+      "type": "常规增益状态",
+      "effect": "先攻提升，造成伤害提升，受到伤害降低",
+      "initiative_bonus_at_level_1": 15,
+      "initiative_bonus_at_level_10": 30,
+      "damage_dealt_bonus_at_level_1": 0.07,
+      "damage_dealt_bonus_at_level_10": 0.14,
+      "damage_taken_reduction_at_level_1": 0.07,
+      "damage_taken_reduction_at_level_10": 0.14,
+      "scales_with": ["先攻"],
+      "front_row_first_2_rounds_effect_increase": 0.30,
+      "raw_text": "乐进「每战先登」：先攻提升15→30点，造成伤害提升7%→14%（受先攻影响），受到伤害降低7%→14%（受先攻影响）。战斗前2回合，若自身为前排先登效果提升30%。"
+    },
+    {
+      "name": "决堰",
+      "type": "常规负面状态",
+      "effect": "造成伤害降低1%→2%，可叠加15层，持续到战斗结束",
+      "damage_dealt_reduction_at_level_1": 0.01,
+      "damage_dealt_reduction_at_level_10": 0.02,
+      "max_stacks": 15,
+      "duration": "战斗结束",
+      "scales_with": ["智力"],
+      "raw_text": "陆抗「决堰倾涛」：造成伤害降低1%→2%（受智力影响），可叠加15层，持续到战斗结束。"
+    },
+    {
+      "name": "摧锋",
+      "type": "常规负面状态",
+      "effect": "每持有1层决堰，受到伤害提升；造成伤害后概率受到虚弱",
+      "damage_taken_increase_per_jueyan_stack_at_level_1": 0.01,
+      "damage_taken_increase_per_jueyan_stack_at_level_10": 0.02,
+      "after_damage_apply_state": "虚弱",
+      "after_damage_apply_state_chance_at_level_1": 0.04,
+      "after_damage_apply_state_chance_at_level_10": 0.08,
+      "after_damage_apply_state_duration": "回合结束",
+      "scales_with": ["智力"],
+      "chance_scales_with": ["决堰层数"],
+      "raw_text": "陆抗「决堰倾涛」：每持有1层决堰，受到伤害提升1%→2%（受智力影响），且造成伤害后有4%→8%概率（受决堰层数影响）受到虚弱（持续到回合结束）。"
+    },
+    {
+      "name": "属性降低",
+      "type": "负面状态",
+      "effect": "武力、智力、统率、先攻4种基础属性降低",
+      "affected_attributes": ["武力", "智力", "统率", "先攻"],
+      "raw_text": "负面状态，武力、智力、统率、先攻4种基础属性降低。"
+    },
+    {
+      "name": "顾盼",
+      "type": "常规增益状态",
+      "effect": "受到的伤害、追击战法伤害、主动战法伤害降低",
+      "damage_taken_reduction_at_level_1": 0.08,
+      "damage_taken_reduction_at_level_10": 0.16,
+      "chase_skill_damage_taken_reduction_at_level_1": 0.08,
+      "chase_skill_damage_taken_reduction_at_level_10": 0.16,
+      "active_skill_damage_taken_reduction_at_level_1": 0.08,
+      "active_skill_damage_taken_reduction_at_level_10": 0.16,
+      "reduction_when_owner_takes_damage_at_level_1": 0.01,
+      "reduction_when_owner_takes_damage_at_level_10": 0.02,
+      "max_reductions_per_round": 8,
+      "raw_text": "邹氏「顾盼生姿」：受到的伤害、追击战法伤害、主动战法伤害降低8%→16%。自身受到伤害后使我军全体顾盼效果降低1%→2%，持续到回合结束，每回合最多降低8次。"
+    },
+    {
+      "name": "横矛",
+      "type": "常规增益状态",
+      "effect": "造成伤害后，概率对目标施加畏惧；若目标已持有畏惧，则提升兵刃伤害，可叠加",
+      "after_dealing_damage_apply_state": "畏惧",
+      "after_dealing_damage_apply_state_chance_at_level_1": 0.25,
+      "after_dealing_damage_apply_state_chance_at_level_10": 0.50,
+      "after_dealing_damage_apply_state_duration_rounds": 1,
+      "max_triggers_per_enemy_per_round": 1,
+      "weapon_damage_bonus_if_target_has_state": "畏惧",
+      "weapon_damage_bonus_at_level_1": 0.01,
+      "weapon_damage_bonus_at_level_10": 0.02,
+      "stackable": true,
+      "scales_with": ["横矛持有者武力"],
+      "raw_text": "瞋目横矛：造成伤害后，有25%→50%概率（受横矛持有者武力影响）对目标施加畏惧（每回合每名敌军最多触发1次），持续1回合，若目标已持有畏惧，则兵刃伤害提升1%→2%（受横矛持有者武力影响），可叠加。"
+    },
+    {
+      "name": "披坚",
+      "type": "常规增益状态",
+      "effect": "行动前恢复自身兵力，并降低受到的兵刃伤害",
+      "before_action_heal_rate_at_level_1": 0.40,
+      "before_action_heal_rate_at_level_10": 0.80,
+      "weapon_damage_taken_reduction_at_level_1": 0.10,
+      "weapon_damage_taken_reduction_at_level_10": 0.20,
+      "scales_with": ["目标智力", "目标统率"],
+      "raw_text": "披坚执锐：披坚，行动前恢复自身兵力（治疗率40%→80%，受目标智力和统率影响），受到兵刃伤害降低10%→20%。"
+    },
+    {
+      "name": "执锐",
+      "type": "常规增益状态",
+      "effect": "普通攻击后，概率对敌军随机单体造成兵刃伤害",
+      "after_basic_attack_trigger_chance": 0.50,
+      "target": "敌军随机单体",
+      "damage_kind": "兵刃",
+      "damage_rate_at_level_1": 0.50,
+      "damage_rate_at_level_10": 1.00,
+      "raw_text": "披坚执锐：执锐，普通攻击后，有50%概率对敌军随机单体造成1次50%→100%兵刃伤害。"
+    },
+    {
+      "name": "伏兵",
+      "type": "功能性增益状态",
+      "effect": "受到伤害时，消耗伏兵抵挡其中50%的伤害，并使伤害来源产生等额逃兵",
+      "max_amount": 1500,
+      "damage_block_ratio": 0.50,
+      "consume_on_damage": true,
+      "apply_equal_deserter_to_damage_source": true,
+      "raw_text": "功能性增益状态，数量上限1500，受到伤害时，消耗伏兵抵挡其中50%的伤害，并使伤害来源产生等额逃兵。"
+    },
+    {
+      "name": "潜袭",
+      "type": "常规增益状态",
+      "effect": "受到伤害降低；满层时额外提升造成谋略伤害",
+      "damage_taken_reduction_at_level_1": 0.015,
+      "damage_taken_reduction_at_level_10": 0.03,
+      "max_stacks": 6,
+      "duration": "回合结束",
+      "full_stack_strategy_damage_bonus_at_level_1": 0.05,
+      "full_stack_strategy_damage_bonus_at_level_10": 0.10,
+      "full_stack_strategy_damage_bonus_duration_rounds": 1,
+      "scales_with": ["智力"],
+      "raw_text": "潜师袭远：潜袭，受到伤害降低1.5%→3%（受智力影响），可叠加6层，持续到回合结束，满层时，额外使自身造成谋略伤害提升5%→10%（受智力影响），持续1回合。"
+    },
+    {
+      "name": "据守",
+      "type": "常规增益状态",
+      "effect": "统率提升；回合结束治疗时，每层提高岿然不动的治疗率",
+      "command_bonus_at_level_1": 12,
+      "command_bonus_at_level_10": 24,
+      "max_stacks": 3,
+      "duration": "回合结束",
+      "heal_rate_bonus_per_stack": 0.20,
+      "raw_text": "岿然不动：据守，统率提升12→24点，可叠加3次，持续到回合结束；每持有1层据守，回合结束治疗率提升20%。"
+    },
+    {
+      "name": "应变",
+      "type": "常规减益状态",
+      "effect": "最高属性降低，造成伤害降低",
+      "highest_stat_reduction_at_level_1": 10,
+      "highest_stat_reduction_at_level_10": 20,
+      "damage_dealt_reduction_at_level_1": 0.05,
+      "damage_dealt_reduction_at_level_10": 0.10,
+      "effect_bonus_per_round": 0.08,
+      "duration": "回合结束",
+      "scales_with": ["施加者武力", "施加者智力", "施加者统率"],
+      "raw_text": "随机应变：应变，最高属性降低10→20点（受自身武力和智力影响），造成伤害降低5%→10%（受统率影响），持续到回合结束，每回合应变效果提升8%。"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+[project]
+name = "sanmou-battle-sim"
+version = "0.1.0"
+description = "A configurable battle simulator inspired by San Guo: Mou Ding Tian Xia."
+requires-python = ">=3.11"
+
+[project.scripts]
+sanmou-sim = "sanmou_sim.__main__:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>三谋对战配置器</title>
+    <link rel="stylesheet" href="./styles.css?v=20260917-round-nav" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <h1>三谋对战配置器</h1>
+          <p id="dataStatus">读取本地数据中...</p>
+        </div>
+        <div class="actions">
+          <label class="field compact">
+            <span>等级</span>
+            <input id="levelInput" type="number" min="5" max="50" value="50" />
+          </label>
+          <label class="field compact">
+            <span>兵力</span>
+            <input id="troopsInput" type="number" min="1" step="100" value="10000" />
+          </label>
+          <label class="field compact">
+            <span>种子</span>
+            <input id="seedInput" type="number" value="7" />
+          </label>
+          <button id="simulateButton" class="primary-button" type="button">开始对战</button>
+          <button id="toggleConfigButton" type="button" aria-expanded="false">显示配置</button>
+          <button id="copyButton" type="button">复制 JSON</button>
+          <button id="downloadButton" type="button">下载</button>
+        </div>
+      </header>
+
+      <section class="workspace" id="workspace">
+        <section class="teams" id="teams"></section>
+        <aside class="preview" id="configPreview" hidden>
+          <div class="preview-head">
+            <h2>对战配置</h2>
+            <button id="resetButton" type="button">重置</button>
+          </div>
+          <pre id="jsonOutput"></pre>
+        </aside>
+      </section>
+
+      <section id="battleResult" class="battle-result" hidden>
+        <div id="battleSummary" class="battle-summary"></div>
+        <div id="battleStats" class="battle-stats"></div>
+        <details class="battle-log-panel">
+          <summary>查看逐回合战斗明细</summary>
+          <div class="battle-log-layout">
+            <nav id="battleRoundNav" class="battle-round-nav" aria-label="战报回合"></nav>
+            <div id="battleLog" tabindex="0" aria-label="逐回合战斗明细"></div>
+          </div>
+        </details>
+      </section>
+    </main>
+    <div id="generalStateTooltip" class="general-state-tooltip" role="dialog" aria-label="武将当前状态" hidden></div>
+    <div id="skillDescriptionDialog" class="skill-description-dialog" role="dialog" aria-labelledby="skillDescriptionTitle" hidden>
+      <div class="skill-description-panel">
+        <button class="skill-description-close" type="button" aria-label="关闭战法描述">×</button>
+        <div class="skill-description-kicker">满级原始文本描述</div>
+        <h2 id="skillDescriptionTitle"></h2>
+        <div id="skillDescriptionMeta" class="skill-description-meta"></div>
+        <p id="skillDescriptionText" class="skill-description-text"></p>
+      </div>
+    </div>
+
+    <template id="teamTemplate">
+      <article class="team-panel">
+        <div class="team-head">
+          <div class="team-title">
+            <input class="team-name" />
+            <label class="field formation-field">
+              <span>阵型</span>
+              <select class="formation-select"></select>
+            </label>
+          </div>
+          <span class="team-meta"></span>
+        </div>
+        <div class="slots"></div>
+      </article>
+    </template>
+
+    <template id="slotTemplate">
+      <article class="general-slot">
+        <div class="slot-title">
+          <span class="slot-index"></span>
+          <select class="position-select" aria-label="阵位">
+            <option value="front">前排</option>
+            <option value="back">后排</option>
+          </select>
+        </div>
+        <label class="field">
+          <span class="general-label">武将</span>
+          <input class="general-search" type="search" placeholder="按武将名/阵营/兵种检索" />
+          <select class="general-select"></select>
+        </label>
+        <div class="general-card">
+          <div>
+            <strong class="general-name">-</strong>
+            <span class="general-tags"></span>
+          </div>
+          <dl class="stats">
+            <div><dt>武力</dt><dd data-stat="force">0</dd></div>
+            <div><dt>智力</dt><dd data-stat="intellect">0</dd></div>
+            <div><dt>统率</dt><dd data-stat="command">0</dd></div>
+            <div><dt>先攻</dt><dd data-stat="initiative">0</dd></div>
+          </dl>
+        </div>
+        <div class="allocation">
+          <div class="allocation-head">
+            <span>自由属性</span>
+            <div class="allocation-actions">
+              <strong class="allocation-left">剩余 50</strong>
+              <button class="allocation-reset" type="button" title="重置自由属性">重置</button>
+            </div>
+          </div>
+          <div class="allocation-grid">
+            <label>
+              <span>武力</span>
+              <input class="alloc-input" data-alloc="force" type="number" min="0" max="50" value="0" />
+            </label>
+            <label>
+              <span>智力</span>
+              <input class="alloc-input" data-alloc="intellect" type="number" min="0" max="50" value="0" />
+            </label>
+            <label>
+              <span>统率</span>
+              <input class="alloc-input" data-alloc="command" type="number" min="0" max="50" value="0" />
+            </label>
+            <label>
+              <span>先攻</span>
+              <input class="alloc-input" data-alloc="initiative" type="number" min="0" max="50" value="0" />
+            </label>
+          </div>
+        </div>
+        <div class="skills">
+          <label class="field">
+            <span>自带</span>
+            <button class="skill-detail-button innate-skill" type="button" aria-controls="skillDescriptionDialog" aria-expanded="false" disabled>未配置</button>
+          </label>
+          <label class="field">
+            <span>携带 1</span>
+            <input class="skill-search" data-skill-search="1" type="search" placeholder="按战法名检索" />
+            <select class="extra-skill" data-skill-slot="1"></select>
+            <button class="skill-detail-button" data-skill-detail="1" type="button" aria-controls="skillDescriptionDialog" aria-expanded="false" disabled>查看描述</button>
+          </label>
+          <label class="field">
+            <span>携带 2</span>
+            <input class="skill-search" data-skill-search="2" type="search" placeholder="按战法名检索" />
+            <select class="extra-skill" data-skill-slot="2"></select>
+            <button class="skill-detail-button" data-skill-detail="2" type="button" aria-controls="skillDescriptionDialog" aria-expanded="false" disabled>查看描述</button>
+          </label>
+        </div>
+      </article>
+    </template>
+
+    <script src="./app.js?v=20260917-round-nav"></script>
+  </body>
+</html>

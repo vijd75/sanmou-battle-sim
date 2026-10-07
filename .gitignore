@@ -1,0 +1,28 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Native build outputs
+build/
+cmake-build-*/
+*.o
+*.obj
+*.exe
+
+# Local editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local scratch counter accidentally created at the project root
+/500
