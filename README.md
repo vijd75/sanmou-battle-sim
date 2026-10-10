@@ -1,137 +1,151 @@
 # 三国谋定天下对战模拟器
 
-这是一个三谋对战模拟器骨架，重点是把对战流程、武将数据、战法效果拆开，方便后续逐步校准到真实游戏。
+一个用于配置队伍、运行战斗模拟并对照游戏战报校准机制的本地项目。它把队伍配置、结构化战法数据、逐事件战斗结算和可追溯战报连接起来，既可用于体验不同阵容的模拟结果，也可作为逐项验证游戏机制与数值的实验工具。项目包含 Python 战斗引擎、浏览器配置器、武将/战法数据、回归测试和战报分析工具。
 
-当前实现参考的公开机制：
+项目仍在持续校准中。我们将“机制是否按正确时机、目标和顺序执行”与“数值是否已由游戏样本确认”分开记录；代码可以执行、战法效果可以通过审计，都不代表未校准战法的具体概率和系数已经与游戏完全一致。
 
-- 每场战斗最多 8 回合，未分胜负判定为平局。
-- 每回合重新按先攻生成行动顺序；同队内部先攻高者在前，敌我队列逐个比拼，先攻差超过 70 时高先攻必定优先，差距不超过 70 时按先攻权重随机。
-- 布阵阶段结算被动和指挥；指挥按武将先攻排序施加，携带者阵亡后移除其指挥效果。
-- 回合内按震慑判定、行动触发被动、主动战法、普攻、反击、追击、回合末异常伤害和状态扣时建模。
-- 控制状态覆盖震慑、技穷、缴械、混乱、嘲讽、虚弱、断粮；特殊状态覆盖抵御、必中、规避、焚烧、中毒等。
-- 兵刃/谋略伤害使用公开公式基底；会心/奇谋为 1.5 倍；逃兵和传递伤害作为独立伤害类型。
-- 规避、易伤、受到伤害降低按边际递减公式叠加：`1 - product(1 - rate)`。
-- 战斗内伤害按 20% 死兵、80% 伤兵记录；`BattleSimulator.run_campaign()` 可用于连续平局连战。
+## 当前功能
 
-公开资料入口：
+- 配置双方队伍：每队 3 名武将，可设置阵型、等级、兵力、自由属性和携带战法；武将与战法选择支持检索。
+- 在浏览器中运行模拟并查看战斗结果、双方战损、武将兵力、战法统计和逐条详细战报。
+- 详细战报按布阵和实际战斗回合分段，可用侧边导航跳转；点击日志中的武将名可查看该时刻的属性、兵力、增减伤和状态快照。
+- 点击已携带战法可在战法旁查看满级原始描述。
+- 支持可复现随机结果（随机种子）、命令行模拟，以及 Python 引擎的连续平局战斗模式。
+- 结构化数据包含 102 名武将和 233 个战法；效果引擎覆盖伤害、治疗、状态、属性变化、概率触发和多目标逐个结算等路径。具体确认程度以校准表为准。
 
-- Bilibili 专栏《三国：谋定天下》战斗机制长文：https://www.bilibili.com/opus/1164737380549132305
-- 小米游戏中心《三谋萌新大讲堂（三）：战斗机制解析》
-- TapTap《战法系统介绍【三国：谋定天下】》
+## 模拟流程
 
-## 运行
+每场战斗由两支三人队伍组成。模拟器先读取队伍、武将、阵型和战法配置，再按战斗阶段推进效果：
 
-前端配置器：
+1. **布阵阶段**：处理已配置的队伍与战前效果，并记录战前状态。
+2. **行动顺序**：根据当前先攻和行动顺序规则，为本回合确定行动次序。
+3. **武将行动**：执行行动开始效果、被动/指挥联动、主动战法、普通攻击、反击和追击等事件。
+4. **逐目标结算**：多目标效果逐个完成；前一目标引发的属性、兵力或状态变化可以影响后续目标的计算和联动触发。
+5. **回合收尾**：处理回合结束效果、持续时间和状态更新；达到胜负条件或回合上限时结束战斗。
+
+每条战报记录尽可能对应结算事件，并保存该时刻相关武将的状态快照。这样可以把“为什么触发、对谁生效、由谁造成伤害、结算后剩余多少兵力”与模拟状态对应起来，便于和游戏内详细战报逐行核对。
+
+战斗核心主要位于 `src/sanmou_sim/simulator.py`、`src/sanmou_sim/skills.py` 和 `src/sanmou_sim/models.py`。浏览器通过 `web/server.py` 提供的本地 HTTP 服务调用同一套 Python 模拟器；战法与武将规则分别由 `data/skills.json`、`data/generals.json` 和 `data/statuses.json` 提供。
+
+## 环境要求
+
+- Python 3.11 或更新版本。
+- 浏览器用于打开本地网页配置器。
+- 可选：`pytest` 用于运行 pytest 测试；CMake 与 C++17 编译器用于构建独立 C++ 程序。
+
+## 启动网页配置器
+
+在项目根目录运行：
 
 ```powershell
 python web\server.py
 ```
 
-然后打开：
-
-```text
-http://localhost:8000/web/index.html
-```
-
-配置器支持双方各 3 名武将、自带战法锁定、每名武将额外携带 2 个战法；每个携带战法槽都可直接按战法名检索，下拉候选按指挥、被动、追击、主动分组。队伍可选择一字阵、箕形阵、雁形阵、方圆阵、锥形阵、鱼鳞阵、钩形阵、偃月阵，阵位、受击率和阵型加成会写入导出的 JSON。
-点击“开始对战”会调用本地模拟器接口，并在页面下方生成游戏式战后战报：对比双方阵型、剩余兵力和战损，按武将展示每个战法及普通攻击的发动次数、伤害、治疗；逐回合明细可按需展开。
-
-Python 版：
+默认打开 <http://127.0.0.1:8000/web/index.html>。若端口被占用，可指定其他端口：
 
 ```powershell
-$env:PYTHONIOENCODING="utf-8"
+python web\server.py --port 8001
+```
+
+停止服务时在终端按 `Ctrl+C`。本地服务同时提供静态网页和 `/api/simulate` 模拟接口。
+
+## 命令行模拟
+
+无需安装即可从源码运行：
+
+```powershell
+$env:PYTHONPATH = "src"
+$env:PYTHONIOENCODING = "utf-8"
 python -m sanmou_sim examples/sample_battle.json --seed 7
+```
+
+`--seed` 用于固定随机序列。Python 引擎也支持连续平局战斗：
+
+```powershell
 python -m sanmou_sim examples/sample_battle.json --seed 7 --campaign --max-battles 8
 ```
 
-C++ 版：
+若希望安装项目及命令行入口，可在支持 `pip` 的 Python 环境中执行：
 
 ```powershell
-cmake -S . -B build
-cmake --build build --config Release
-.\build\Release\sanmou_sim_cpp.exe examples\sample_battle.json --seed 7
-.\build\Release\sanmou_sim_cpp.exe examples\sample_battle.json --seed 7 --campaign --max-battles 8
+python -m pip install -e .
+sanmou-sim examples/sample_battle.json --seed 7
 ```
 
-如果你的 CMake 生成器是单配置生成器，可执行文件可能在：
+## 测试与审计
+
+推荐先运行基础验证：
 
 ```powershell
-.\build\sanmou_sim_cpp.exe examples\sample_battle.json --seed 7
-```
-
-如果没有安装 CMake，也可以用编译器直接编：
-
-```powershell
-g++ -std=c++17 -O2 cpp\main.cpp cpp\json.cpp cpp\simulator.cpp -Icpp -o sanmou_sim_cpp.exe
-.\sanmou_sim_cpp.exe examples\sample_battle.json --seed 7
-```
-
-Windows 上推荐安装 Visual Studio Build Tools 或 MinGW-w64，再装 CMake。
-
-如果还没有安装成本地包，也可以这样运行：
-
-```powershell
-$env:PYTHONIOENCODING="utf-8"
-$env:PYTHONPATH="src"
-python -m sanmou_sim examples/sample_battle.json --seed 7
-```
-
-## 快速校验
-
-```powershell
-$env:PYTHONPATH="src"
-python -m compileall -q src tests
+$env:PYTHONPATH = "src"
+python -m compileall -q src tests web
 python tests/smoke_test.py
+python tests/rules_regression.py
 ```
 
-## 配置格式
+可选安装 pytest 后运行测试集：
 
-对战配置放在 JSON 里。每队 3 名武将，每名武将包含基础属性、兵力和战法列表：
-
-```json
-{
-  "team_a": {
-    "name": "桃园队",
-    "generals": [
-      {
-        "name": "刘备",
-        "troops": 6200,
-        "force": 115,
-        "intellect": 156,
-        "command": 148,
-        "initiative": 128,
-        "skills": ["仁德载世", "避其锐气"]
-      }
-    ]
-  }
-}
+```powershell
+python -m pytest
 ```
 
-## 数据录入
+项目另有全库战法效果和目标顺序审计：
 
-截图录入的数据放在：
+```powershell
+python tests/audit_skill_effects.py
+python tests/full_skill_sequence_audit.py
+python tests/target_sequence_audit.py
+```
 
-- `data/generals.json`：武将当前等级四维、成长、阵营、定位、自带战法。
-- `data/skills.json`：战法类型、特性、概率、1 级到 10 级效果区间、截图原文。
+审计用于发现未映射效果、执行异常和结算顺序回归；它不能证明未经过游戏数据校准的系数、概率或特殊机制正确。
 
-当前按你的说明记录等级规则：
+回归测试适合在修改伤害乘区、减伤、状态时长、目标选择或触发顺序后运行。战报样本分析脚本位于 `reports/`，通常先清洗游戏战报、整理每次事件的属性与增减伤快照，再对候选公式进行拟合和回代。新公式应保留原始样本、适用条件、误差和未覆盖场景，并经过针对性回归后再接入模拟器。
+
+## 项目结构
 
 ```text
-目标等级属性 = 当前属性 + 成长 * (目标等级 - 当前等级) + 自由分配点
+src/sanmou_sim/       Python 模型、战法执行器与战斗模拟器
+web/                  浏览器配置器、样式与本地 HTTP/API 服务
+data/                 武将、战法和异常状态结构化数据
+tests/                冒烟测试、规则回归、战法及目标顺序审计
+examples/             示例对战配置
+tools/                属性估算等辅助脚本
+reports/              战报清洗、拟合分析和专题报告
+DEVELOPMENT_LOG.md    持续开发日志与机制决策记录
+CALIBRATION_TRACKER.md 校准样本、候选公式和待测项目
+ATTRIBUTE_COEFFICIENT_FIT_STATUS.md 属性系数拟合状态
+SKILL_MECHANICS_AUDIT.md 战法机制审计记录
+BATTLE_GENERALS_INNATE_SKILLS.md 武将与自带战法记录
 ```
 
-10、20、30、40、50 级各获得 10 点自由属性。从 5 级升到 50 级，一共可分配 50 点。
+## 机制与校准口径
 
-可以用这个小工具估算 50 级裸属性：
+模拟器遵循目前已确认的规则，包括：
 
-```powershell
-python tools\estimate_stats.py --level 50
-python tools\estimate_stats.py --level 50 --allocate 刘备:intellect:50
-```
+- 兵刃基础伤害：`360 + 攻击者武力 - 目标统率`；谋略基础伤害：`360 + 攻击者智力 - 目标统率/2 - 目标智力/2`。
+- 会心和奇谋的基础伤害倍率为 150%；妖术将对应倍率降低 15 个百分点。伤害与治疗最终转为兵力整数时直接舍弃小数。
+- 同一武将的多项减伤按 `1 - Π(1-r)` 合并；易伤与减伤削减按约定在减伤递减池外结算。造成伤害与兵刃/谋略通用增伤共用 100% 上限，主动、追击、反击等独立增伤另行处理。
+- 同一战法影响多个目标时按目标依次结算，并在下一目标前更新属性、状态和触发条件，以保留目标间的联动影响。
+- 没有明确说明可叠加的持续效果，再次施加时刷新持续时间而不累加；控制、异常状态、逃兵和伤害来源按项目的战报校准约定记录。
 
-## 下一步适合补的东西
+上述是当前模拟器实现/校准口径，不是对全部游戏底层规则的宣称。武将与战法的机制确认和数值确认分开记录；仍未确认的系数或效果应查看 `CALIBRATION_TRACKER.md`、`ATTRIBUTE_COEFFICIENT_FIT_STATUS.md` 与 `SKILL_MECHANICS_AUDIT.md`，不要仅凭结构化效果审计推断其数值准确。
 
-- 录入真实武将面板、红度、等级、兵种和缘分。
-- 把每个战法改成单独公式和状态，而不是通用模板。
-- 增加多次蒙特卡洛模拟，输出胜率、平均战损、关键战法贡献。
-- 增加 Web 页面，做配将输入和战报可视化。
+### 校准原则
+
+- 以用户提供的游戏内战报、面板和控制变量测试为主要证据。文本描述用于确定战法基值、目标、条件和触发语义；拟合公式用于估计属性影响，二者分开管理。
+- 对减伤、规避等有边际递减的效果，区分战法在施加前的原始效果值和目标受到既有减伤影响后的实际增量；不同目标分别按各自状态结算，不共用一个显示增量。
+- 伤害来源、实际行动者、战法拥有者和受击目标是不同概念。友军代打、承伤转移、反应伤害等联动需要明确追踪来源，避免把来源相关效果错误施加给战法携带者。
+- 对概率和多目标战法按数据标记的概率口径及逐目标顺序处理；没有明确可叠加说明的持续效果再次施加时刷新持续时间，不擅自增加层数。
+- 拟合结果应记录样本范围与误差。样本覆盖不足或候选公式只适用于特定属性区间时，保留为待验证结论，不外推成已确认机制。
+
+## 当前边界
+
+- 不同战法可能使用不同属性系数与伤害/治疗模型；第三方整理的通用公式仅作为候选参考，不能直接视为全游戏通用规则。
+- 仍有战法机制、基础值、属性系数、概率和结算边界处于部分确认或待测状态。详见校准文档及相应战报分析，不应把演示结果当作准确的竞技预测。
+- 部分战前系统或角色构筑要素若尚未进入配置数据模型，就不会被模拟器自动补全；运行结果只基于当前配置和已实现效果。
+- 连续战斗模式支持 Python CLI；网页主要用于单场交互配置与查看战报。
+- 仓库保留 `cpp/` C++ 实现，但当前网页服务调用的是 Python 引擎；除非专门运行对应 C++ 构建与测试，不应默认两套实现行为完全一致。
+
+## 数据与贡献
+
+武将、战法和状态分别维护在 `data/generals.json`、`data/skills.json`、`data/statuses.json`。新增或修正机制时，请同步补充针对性回归测试，并在 `DEVELOPMENT_LOG.md` 记录数据依据、规则决策和验证结果；拟合样本及其适用条件记录在 `CALIBRATION_TRACKER.md` 或对应专题报告中。
