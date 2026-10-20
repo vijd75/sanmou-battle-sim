@@ -26,3 +26,8 @@ Desktop.ini
 
 # Local scratch counter accidentally created at the project root
 /500
+
+# Local imported battle database
+data/*.sqlite
+data/*.sqlite3
+data/*.db
