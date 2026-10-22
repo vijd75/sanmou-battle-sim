@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "scope": "演武大会构筑参考；视频经验先验，不是官方规则或胜率榜",
+  "sources": [
+    {
+      "id": "BV1XXNs6rEHZ",
+      "title": "【阿趣演武】问鼎赛季千场冠军阵容，万字拆解全攻略",
+      "url": "https://www.bilibili.com/video/BV1XXNs6rEHZ",
+      "creator": "三谋阿趣",
+      "published": "2026-07-11",
+      "evidence": "作者自述的问鼎赛季冠军阵容统计与逐队讲解",
+      "limitations": [
+        "展示约71条队伍记录，但样本去重方式、统计分母和时间范围未完整说明",
+        "不能把出场频率解释为胜率或当前版本强度",
+        "逐队讲解支持体系和角色分析，但模糊的小字战法配置不作推断"
+      ]
+    },
+    {
+      "id": "BV1QHeg6qEpF",
+      "title": "三谋初入问鼎赛季演武不会配？六大夺冠体系来帮你！",
+      "url": "https://www.bilibili.com/video/BV1QHeg6qEpF",
+      "creator": "三谋阿趣",
+      "published": "2026-09-17",
+      "evidence": "视频口播与可辨认的体系总览画面",
+      "limitations": [
+        "适用语境为视频所述S4问鼎赛季，赛季更替后需重新核对",
+        "T0/T1等标签是作者经验评级，不是独立验证的胜率排名",
+        "部分阵容卡战法小字不可可靠辨认，不应补写成确定配置",
+        "视频未给出各体系样本量、胜率或统一对比口径"
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "id": "team-context-over-pick-rate",
+      "claim": "武将价值依赖队友、战法链、保护条件和对局阶段；低出场率不等于不可用，单将出场率也不能直接排序队伍强弱。",
+      "evidence": "BV1XXNs6rEHZ",
+      "confidence": "视频样本与作者逐队解说支持的构筑经验；统计口径未完全公开"
+    },
+    {
+      "id": "systems-have-requirements-and-branches",
+      "claim": "先检查队伍核心机制及其成立条件，再评估保护、续航、增伤、发动率和替补分支；同时计算该核心被分配到本队后的跨队机会成本。",
+      "evidence": "BV1XXNs6rEHZ、BV1QHeg6qEpF",
+      "confidence": "对视频内容的归纳，可作为软先验，不等同于实测胜率模型"
+    }
+  ],
+  "systems": [
+    {
+      "id": "han-shield",
+      "name": "汉盾",
+      "season": "视频所述S4问鼎赛季",
+      "creator_rating": "T0",
+      "core_generals": ["皇甫嵩", "袁术"],
+      "preferred_partners": ["朱儁"],
+      "flexible_partners": ["夏侯惇", "邓艾"],
+      "engine": "偏慢速承伤体系，通过受击成长提高统率，逐步建立对兵刃输出的承受能力。",
+      "requirements": ["核心组合齐全", "能承受前期压力并获得成长时间", "第三位补足队伍功能而不破坏核心协同"],
+      "risks": ["规避型队伍可能降低其有效输出", "后期高爆发可能越过成长后的防御窗口"],
+      "source_ids": ["BV1QHeg6qEpF"],
+      "skill_loadout": "视频中的部分战法小字不可可靠辨认；不要据此声称存在已确认的固定战法表。"
+    },
+    {
+      "id": "simayi",
+      "name": "司马懿体系",
+      "season": "视频所述S4问鼎赛季",
+      "creator_rating": "T0",
+      "core_generals": ["司马懿"],
+      "preferred_partners": ["曹操", "荀彧", "张春华"],
+      "flexible_partners": [],
+      "engine": "围绕司马懿输出核心配置保护与减伤；视频展示包含张春华的追击路线，也提及常规主动战法路线。",
+      "requirements": ["司马懿需要得到足够保护并保持有效行动", "按实际携带战法和行动条件判断走追击或主动路线"],
+      "risks": ["控制、保护不足或发动机会不足会压低核心兑现能力", "不应机械要求拖到第八回合才判断输出价值"],
+      "source_ids": ["BV1QHeg6qEpF"],
+      "skill_loadout": "视频展示多个分支，但完整技能配置未能从画面可靠复原。"
+    },
+    {
+      "id": "jiangwei",
+      "name": "姜维体系",
+      "season": "视频所述S4问鼎赛季",
+      "creator_rating": "T0",
+      "core_generals": ["姜维"],
+      "preferred_partners": ["SP诸葛亮"],
+      "flexible_partners": ["诸葛亮", "黄月英", "法正", "袁绍"],
+      "engine": "以姜维作为独立输出核心，由队友补充辅助、保护、增伤或续航。",
+      "requirements": ["先核对当前可用战法能否支持姜维主核", "优先比较SP诸葛亮等协同位与替代辅助的实际机制"],
+      "risks": ["姜维也可能被其他体系争抢；抽离姜维会失去独立成队机会", "替代伙伴的功能不能只凭角色标签推断"],
+      "source_ids": ["BV1QHeg6qEpF"],
+      "skill_loadout": "视频阵容卡战法小字不完整，不记录为固定方案。"
+    },
+    {
+      "id": "zuoci-active",
+      "name": "左慈主动战法体系",
+      "season": "视频所述S4问鼎赛季",
+      "creator_rating": "T0-",
+      "core_generals": ["左慈"],
+      "preferred_partners": ["张宁"],
+      "flexible_partners": ["关羽", "关银屏", "陆逊", "荀攸"],
+      "engine": "利用左慈与主动战法未发动后重判定相关的体系价值，搭配能从主动战法机会中获益的输出核心。",
+      "requirements": ["队伍中需有能兑现主动战法机会的武将和战法", "逐项核对重判定机制在当前赛季与卡牌条件下是否适用"],
+      "risks": ["若队友不能有效利用主动战法机会，核心辅助价值会下降", "视频提及的次数上限属于作者对机制的描述，未经本项目独立核验"],
+      "source_ids": ["BV1QHeg6qEpF"],
+      "skill_loadout": "不将模糊画面中的具体战法配置补全为确定信息。"
+    },
+    {
+      "id": "zhaoyun-ganfuren",
+      "name": "赵云体系",
+      "season": "视频所述S4问鼎赛季",
+      "creator_rating": "作者称有甘夫人时可达T0、缺位时约T1",
+      "core_generals": ["赵云"],
+      "preferred_partners": ["甘夫人"],
+      "flexible_partners": ["貂蝉", "关羽", "黄月英", "刘备"],
+      "engine": "以赵云为核心；视频强调甘夫人提供规避协同，第三位可按实际卡池承担保护或其他配合。",
+      "requirements": ["重点检查甘夫人是否可用及规避协同是否与当前配置匹配", "第三位需结合战法池和其他队伍资源再定"],
+      "risks": ["没有甘夫人时，视频作者对体系评级明显下调", "甘夫人带来的规避数值是视频作者说法，非本项目独立实测"],
+      "source_ids": ["BV1QHeg6qEpF"],
+      "skill_loadout": "视频中的完整固定战法配置不可可靠辨认。"
+    },
+    {
+      "id": "luxun-fire",
+      "name": "陆逊火系体系",
+      "season": "视频所述S4问鼎赛季",
+      "creator_rating": "T1；作者强调上限较高",
+      "core_generals": ["陆逊"],
+      "preferred_partners": ["孙权"],
+      "flexible_partners": ["左慈", "步练师", "周瑜", "张昭"],
+      "engine": "通过主动战法发动率、火系配合、续航和输出窗口共同支撑陆逊的后续输出。",
+      "requirements": ["当前战法池需补足主动战法发动条件", "队伍要有火系协同和足够续航/输出时间", "按具体机制评估孙权对发动率的实际贡献"],
+      "risks": ["技穷、空城等限制可能压缩主动战法输出窗口", "作者关于发动率提升的数值不作为已确认系数"],
+      "source_ids": ["BV1QHeg6qEpF"],
+      "skill_loadout": "视频展示多个搭配但未提供可可靠复原的统一战法表。"
+    }
+  ]
+}

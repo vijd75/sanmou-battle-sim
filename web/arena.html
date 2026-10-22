@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>演武大会助手</title>
+    <link rel="stylesheet" href="./arena.css" />
+  </head>
+  <body>
+    <main class="arena-shell">
+      <header class="arena-header">
+        <div>
+          <a class="back-link" href="./index.html">← 对战模拟器</a>
+          <h1>演武大会助手</h1>
+          <p>选秀推荐与三队编成</p>
+        </div>
+        <div class="header-actions">
+          <span id="saveState" class="save-state" aria-live="polite">本地自动保存</span>
+          <button id="openAdvisor" class="secondary-button" type="button">构筑顾问</button>
+          <button id="resetArena" class="quiet-button" type="button" title="清空本次演武记录">重置</button>
+        </div>
+      </header>
+
+      <section class="status-strip" aria-label="当前演武资源">
+        <div><span>武将</span><strong id="generalCount">0 / 10</strong></div>
+        <div><span>战法</span><strong id="skillCount">0 / 24</strong></div>
+        <div><span>选秀</span><strong id="draftCount">0 / 6</strong></div>
+        <div><span>韬略</span><strong>不计入</strong></div>
+      </section>
+
+      <nav class="stage-nav" aria-label="演武流程">
+        <button data-stage="initial" class="stage-tab is-active" type="button"><span>01</span>初始卡池</button>
+        <button data-stage="draft" class="stage-tab" type="button"><span>02</span>六轮选秀</button>
+        <button data-stage="support" class="stage-tab" type="button"><span>03</span>支援位</button>
+        <button data-stage="teams" class="stage-tab" type="button"><span>04</span>三队编成</button>
+      </nav>
+
+      <section id="initialStage" class="stage-panel">
+        <div class="section-heading">
+          <div><span class="eyebrow">开局发放</span><h2>录入初始卡池</h2></div>
+          <p>可补录开局发放的武将与战法；也可以直接进入当前选秀轮次，队伍建议只会使用已经登记的卡牌。</p>
+        </div>
+        <div class="inventory-grid">
+          <section class="inventory-column">
+            <div class="column-heading"><h3>武将</h3><span>4 名</span></div>
+            <div class="picker-row">
+              <input id="initialGeneralInput" list="generalCatalog" autocomplete="off" placeholder="搜索武将" />
+              <button id="addInitialGeneral" class="icon-button" type="button" aria-label="加入武将" title="加入武将">+</button>
+            </div>
+            <div id="initialGenerals" class="token-list"></div>
+          </section>
+          <section class="inventory-column">
+            <div class="column-heading"><h3>战法</h3><span>8 个</span></div>
+            <div class="picker-row">
+              <input id="initialSkillInput" list="skillCatalog" autocomplete="off" placeholder="搜索战法" />
+              <button id="addInitialSkill" class="icon-button" type="button" aria-label="加入战法" title="加入战法">+</button>
+            </div>
+            <div id="initialSkills" class="token-list"></div>
+          </section>
+        </div>
+        <div class="stage-footer">
+          <p id="initialHint" class="hint">可随时离开页面，记录会保存在当前浏览器。</p>
+          <button id="startDraft" class="primary-button" type="button">进入选秀 <span aria-hidden="true">→</span></button>
+        </div>
+      </section>
+
+      <section id="draftStage" class="stage-panel" hidden>
+        <div class="section-heading">
+          <div><span class="eyebrow" id="roundEyebrow">第 1 轮 · 武将</span><h2 id="roundTitle">选择一组候选</h2></div>
+          <p>候选组可交给 agent 比较；如果游戏里已经选完，只需录入实际获得的三张牌。任何时候都可打开“三队编成”查看当前卡池建议。</p>
+        </div>
+        <div class="draft-progress" id="draftProgress"></div>
+        <div id="draftHistory" class="draft-history" aria-live="polite"></div>
+        <div class="draft-toolbar">
+          <p id="draftModeHint" class="hint">录入三组候选，或直接登记游戏里已经选到的三张牌。</p>
+          <button id="toggleDirectEntry" class="secondary-button" type="button">已在游戏中选定，直接录入结果</button>
+          <button id="skipDraft" class="quiet-button" type="button">跳过本轮</button>
+        </div>
+        <div id="draftGroups" class="draft-groups"></div>
+        <div class="recommendation" id="draftRecommendation" aria-live="polite"></div>
+        <div class="stage-footer">
+          <button id="backToInitial" class="quiet-button" type="button">← 初始卡池</button>
+          <button id="acceptDraft" class="primary-button" type="button" disabled>确认所选整组 →</button>
+        </div>
+      </section>
+
+      <section id="supportStage" class="stage-panel" hidden>
+        <div class="section-heading">
+          <div><span class="eyebrow">支援与锦囊</span><h2>配置支援位与锦囊</h2></div>
+          <p>基础支援位从账号库存选择；锦囊独立选择，二者分别结算。</p>
+        </div>
+        <div class="support-grid">
+          <section class="support-card">
+            <div class="column-heading"><h3>账号库存</h3><span>用于选择支援</span></div>
+            <div class="inventory-subsection">
+              <label class="field-label">已拥有武将<input id="ownedGeneralInput" list="generalCatalog" autocomplete="off" placeholder="搜索并加入库存" /></label>
+              <button id="addOwnedGeneral" class="secondary-button" type="button">加入武将库存</button>
+              <div id="ownedGenerals" class="token-list"></div>
+            </div>
+            <div class="inventory-subsection">
+              <label class="field-label">已拥有战法<input id="ownedSkillInput" list="skillCatalog" autocomplete="off" placeholder="搜索并加入库存" /></label>
+              <button id="addOwnedSkill" class="secondary-button" type="button">加入战法库存</button>
+              <div id="ownedSkills" class="token-list"></div>
+            </div>
+          </section>
+          <section class="support-card support-card-wide">
+            <div class="column-heading"><h3>基础支援位</h3><span>1 名武将 + 2 个战法</span></div>
+            <div class="base-support-grid">
+              <label class="field-label">武将支援<select id="baseGeneralSupport"></select></label>
+              <label class="field-label">战法支援 1<select id="baseSkillSupport1"></select></label>
+              <label class="field-label">战法支援 2<select id="baseSkillSupport2"></select></label>
+            </div>
+            <div class="kit-divider"></div>
+            <div class="column-heading"><h3>锦囊</h3><span>独立于基础支援位</span></div>
+            <label class="field-label">选择锦囊<select id="kitType"><option value="none">暂不使用</option><option value="general">武将转化：转化已有武将</option><option value="orange">战法重铸：重随机 2 个橙色战法</option><option value="purple">紫色支援：额外增加 1 个紫色战法支援位</option></select></label>
+            <div id="kitDetails" class="kit-details"></div>
+          </section>
+        </div>
+        <div class="notice-line"><strong>数据边界</strong><span>武将/战法资料未包含账号库存、战法稀有度及游戏随机池。重随机后的结果请按游戏实际显示录入，助手不伪造随机结果。</span></div>
+        <div class="stage-footer">
+          <button id="backToDraft" class="quiet-button" type="button">← 返回选秀</button>
+          <button id="finishSupport" class="primary-button" type="button">进入三队编成 →</button>
+        </div>
+      </section>
+
+      <section id="teamsStage" class="stage-panel" hidden>
+        <div class="section-heading">
+          <div><span class="eyebrow">阵容规划</span><h2>三队编成建议</h2></div>
+          <p>可随时按当前卡池生成阶段性建议；补充武将或战法后可重新计算，单队最多 3 人。</p>
+        </div>
+        <div class="team-toolbar">
+          <div id="teamSummary" class="team-summary"></div>
+          <button id="rebuildTeams" class="secondary-button" type="button">重新计算推荐</button>
+        </div>
+        <div id="recommendedTeams" class="recommended-teams"></div>
+        <section class="recommendation-notes">
+          <h3>推荐依据</h3>
+          <p>综合武将角色、阵营与兵种组合、属性方向、自带战法结构，以及战法效果与武将的适配度。当前结果是基于资料库的协同启发式排序，不代表已验证的演武胜率；韬略加成不参与计算。</p>
+        </section>
+        <div class="stage-footer">
+          <button id="backToSupport" class="quiet-button" type="button">← 返回当前流程</button>
+          <button id="copyRoster" class="secondary-button" type="button">复制编成摘要</button>
+        </div>
+      </section>
+
+      <aside id="advisorDrawer" class="advisor-drawer" aria-label="演武构筑顾问" hidden>
+        <header class="advisor-drawer-header">
+          <div>
+            <span class="eyebrow">演武大会</span>
+            <h2>构筑顾问</h2>
+            <p id="advisorPoolSummary"></p>
+          </div>
+          <div class="advisor-header-actions">
+            <button id="advisorSettingsOpen" class="quiet-button" type="button">模型设置</button>
+            <button id="advisorClose" class="quiet-button" type="button" aria-label="关闭构筑顾问">关闭</button>
+          </div>
+        </header>
+        <div id="advisorMessages" class="advisor-messages" role="log" aria-live="polite"></div>
+        <div class="advisor-suggestions" aria-label="建议提问">
+          <button type="button" data-advisor-prompt="结合当前卡池，分析最值得围绕构筑的核心武将、关键战法联动和主要短板。">分析当前卡池</button>
+          <button type="button" data-advisor-prompt="检查当前卡池能否组成已知成熟强队；请区分项目实证与模型经验，不要只按定位凑队。">寻找成熟强队</button>
+        </div>
+        <form id="advisorChatForm" class="advisor-chat-form">
+          <label class="sr-only" for="advisorInput">发送构筑问题</label>
+          <textarea id="advisorInput" rows="3" maxlength="4000" placeholder="问队伍核心、战法搭配、强队模板或候选取舍……"></textarea>
+          <div class="advisor-compose-footer">
+            <span id="advisorConnectionState">先配置模型接口</span>
+            <button id="advisorSend" class="primary-button" type="submit">发送</button>
+          </div>
+          <p class="advisor-privacy-note">发送时会把当前卡池资料与最近对话发给你配置的模型。</p>
+        </form>
+      </aside>
+
+      <dialog id="advisorSettingsDialog" class="advisor-settings-dialog">
+        <form id="advisorSettingsForm" class="advisor-settings-form">
+          <div class="settings-heading">
+            <div><span class="eyebrow">连接设置</span><h2>构筑模型</h2></div>
+            <button id="advisorSettingsCancel" class="quiet-button" type="button">关闭</button>
+          </div>
+          <label class="field-label">兼容接口完整地址（含 /chat/completions）<input id="advisorEndpoint" type="url" placeholder="https://你的服务地址/v1/chat/completions" autocomplete="url" required /></label>
+          <label class="field-label">模型名称<input id="advisorModel" type="text" placeholder="填写服务商提供的模型 ID" autocomplete="off" required /></label>
+          <label class="field-label">API Key<input id="advisorApiKey" type="password" placeholder="本地模型可留空" autocomplete="new-password" /></label>
+          <p class="advisor-settings-note">地址与模型名保存在本地浏览器；API Key 仅保存在当前浏览器会话。每条消息只发送到这里配置的接口。</p>
+          <div class="settings-actions">
+            <button id="advisorClearKey" class="quiet-button" type="button">清除会话密钥</button>
+            <button class="primary-button" type="submit">保存设置</button>
+          </div>
+        </form>
+      </dialog>
+
+      <datalist id="generalCatalog"></datalist>
+      <datalist id="skillCatalog"></datalist>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </main>
+    <script src="./arena.js"></script>
+  </body>
+</html>

@@ -12,6 +12,23 @@
   --focus: #82b1ff;
 }
 
+.arena-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.arena-link:hover {
+  border-color: var(--gold);
+  color: #fff2cd;
+}
+
 * {
   box-sizing: border-box;
 }
